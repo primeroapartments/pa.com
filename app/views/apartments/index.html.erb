@@ -1,0 +1,14 @@
+<h1>Apartments</h1>
+
+<form action="/apartments" method="get">
+  <input type="text" name="location" placeholder="City you want to visit">
+  <input type="submit">
+</form>
+
+<ul>
+  <% @apartments.each do |id, apartment| %>
+  <li>
+    <%= apartment[:location] %> (<%= apartment[:apartment]%>)
+  </li>
+  <% end %>
+</ul>
