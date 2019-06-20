@@ -1,0 +1,44 @@
+.footer {
+  background: #F4F4F4;
+  transition: all 0.3s ease;
+  height: 55px;
+  padding: .5rem 3rem;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  justify-content: space-around;
+  position: sticky;
+  top: 0px;
+}
+
+.footer-center {
+  align-content: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.footer-link {
+  color: #616668;
+  font-size: 14px;
+}
+
+.footer-link:hover {
+  color: #45484a;
+  text-decoration: none;
+}
+.footer-item {
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.footer-link a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-link a:hover {
+  opacity: 1;
+}
+
