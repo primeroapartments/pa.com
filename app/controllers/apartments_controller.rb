@@ -1,4 +1,5 @@
 class ApartmentsController < ApplicationController
+
   def index
     @apartments = Apartment.where.not(latitude: nil, longitude: nil)
 
@@ -8,5 +9,10 @@ class ApartmentsController < ApplicationController
         lng: apartment.longitude
       }
     end
+
+  def new
+    @apartments = Apartment.new
+  end
+
   end
 end

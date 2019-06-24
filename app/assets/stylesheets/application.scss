@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+@import 'mapbox-gl/dist/mapbox-gl.css';
+/*@import "config/bootstrap_variables";*/
+
+/*// External libraries*/
+/*@import "bootstrap-sprockets";*/
+@import "bootstrap";
+/*@import "font-awesome-sprockets";*/
+@import "font-awesome";
+
+
+/*// Your CSS partials*/
+@import "components/banner";
+@import "components/card";
+@import "components/footer";
+@import "components/navbar";
