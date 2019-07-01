@@ -29,7 +29,7 @@
 /* Basic navbar item */
 .navbar-item {
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 /* Navbar link */
@@ -40,6 +40,21 @@
 .navbar-link:hover {
   color: #45484a;
   text-decoration: none;
+}
+
+.button {
+  text-align: center !important;
+  justify-content: space-between !important;
+  padding: .8rem 1.2rem;
+  background: #061704;
+  border-radius: 6px;
+  color: white;
+  font-weight: 300;
+  line-height: 1rem;
+  letter-spacing: 1px;
+  border: 5px;
+  cursor: pointer !important;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Dropdown menu */
