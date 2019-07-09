@@ -9,10 +9,26 @@ class ApartmentsController < ApplicationController
         lng: apartment.longitude
       }
     end
-
-  def new
-    @apartments = Apartment.new
   end
 
+  def show
+    @apartments = Apartment.all
+  end
+
+  def new
+    @apartment = Apartment.new
+  end
+
+  def create
+  end
+
+  def edit
+    @apartment = Apartment.find(params[:id])
+  end
+
+  def update
+  end
+
+  def destroy
   end
 end

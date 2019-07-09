@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'website_terms', to: 'pages#website_terms'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'apartments', to: 'apartments#index'
+  get 'apartments/new', to: 'apartments#new'
+  post 'apartments', to: 'apartments#create'
 
   root to: 'pages#home'
 end
