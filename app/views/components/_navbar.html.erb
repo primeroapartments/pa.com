@@ -4,13 +4,21 @@
     <%= image_tag "high_res_round.png", alt: "logo" %>
   </a>
 
-  <p class="primero">Primero Apartments</p>
+  <h4 class="primero">Primero Apartments</h4>
 
 
   <div class="navbar-right hidden-xs hidden-sm">
-     <!--  <%= link_to "Home", "#home", class: "navbar-item navbar-link button-white" %> -->
       <%= link_to "Locations", locations_path, class: "navbar-item navbar-link button-white" %>
-      <%= link_to "Book", book_path, class: "navbar-item navbar-link button" %>
+      <div class="navbar-item navbar-link dropdown">
+        <button class="dropbtn">Book</button>
+          <div class="dropdown-content">
+            <%=link_to "Sheffield", sheffield_path %>
+            <%=link_to "Cardiff", cardiff_path %>
+            <%=link_to "Basingstoke", basingstoke_path %>
+            <%=link_to "Birmingham - coming soon!", birmingham_path %>
+            <%=link_to "Preston - coming soon!", preston_path %>
+          </div>
+      </div>
       <%= link_to "FAQ", faq_path, class: "navbar-item navbar-link button-white" %>
   </div>
 </div>
