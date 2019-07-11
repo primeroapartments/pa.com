@@ -20,6 +20,7 @@
 
 /* Right section */
 .navbar-right {
+  text-align: center;
   display: flex;
   align-items: right;
   justify-content: space-between;
@@ -43,12 +44,26 @@
 }
 
 .button {
-  text-align: center !important;
+  text-align: justify !important;
   justify-content: space-between !important;
   padding: .8rem 1.2rem;
   background: #061704;
   border-radius: 6px;
   color: white;
+  font-weight: 300;
+  line-height: 1rem;
+  letter-spacing: 1px;
+  border: 5px;
+  cursor: pointer !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-white {
+  text-align: justify !important;
+  justify-content: space-between !important;
+  padding: .8rem 1.2rem;
+  background: white;
+  border-radius: 6px;
   font-weight: 300;
   line-height: 1rem;
   letter-spacing: 1px;
