@@ -18,13 +18,16 @@
 }
 
 .footer-link {
-  color: #616668;
+  color: #061704;
   font-size: 14px;
+  opacity: 0.8;
+  text-decoration: none;
 }
 
 .footer-link:hover {
-  color: #45484a;
+  color: #061704;
   text-decoration: none;
+  opacity: 1;
 }
 .footer-item {
   cursor: pointer;
@@ -32,13 +35,16 @@
 }
 
 .footer-link a {
-  color: black;
-  opacity: 0.15;
+  size: 16px;
+  color: #061704;
+  opacity: 0.7;
   text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .footer-link a:hover {
+  color: #061704;
   opacity: 1;
+  text-decoration: none;
 }
 

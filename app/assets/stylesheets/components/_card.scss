@@ -30,3 +30,37 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+hr.style-one {
+  color: #061704;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+hr.style-two {
+  border: 0;
+  height: 5px;
+  width: 50vw;
+  background: #061704;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: center;
+/*    margin: 0 auto;
+    margin-bottom: 5px;*/
+}
+
+.carousel-indicators li {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 100%;
+}
+
+ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.carousel slide {
+
+}
