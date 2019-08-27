@@ -1,0 +1,62 @@
+.chapter {
+position: relative;
+margin-bottom: 1px;
+width: 100%;
+color: #fff;
+overflow: hidden;
+}
+
+input {
+position: absolute;
+
+}
+
+label.chapterlabel {
+position: relative;
+display: block;
+padding: 0 0 0 20px;
+background-color: #061704;
+font-weight: bold;
+line-height: 40px;
+cursor: pointer;
+padding-right: 10vh;
+}
+
+.chapter-content {
+color: #061704;
+max-height: 0;
+overflow: auto;
+background-color: #fff;
+-webkit-transition: max-height .50s;
+-moz-transition: max-height .50s;
+-o-transition: max-height .50s;
+transition: max-height .50s;
+}
+
+.chapter-content p {
+margin: 20px;
+}
+
+input:checked ~ .chapter-content {
+max-height: 250px;
+}
+
+label.chapterlabel::after {
+position: absolute;
+right: 0;
+top: 0;
+display: block;
+width: 50px;
+height: 50px;
+line-height: 50px;
+text-align: center;
+}
+input[type=checkbox] + label.chapterlabel::after {
+content: "+";
+}
+
+input[type=checkbox]:checked + label.chapterlabel::after {
+content: "-";
+}
+
+

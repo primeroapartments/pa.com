@@ -50,6 +50,18 @@ hr.style-two {
     margin-bottom: 5px;*/
 }
 
+hr.style-three {
+  border: 0;
+  height: 2px;
+  width: 50vw;
+  background: #061704;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: center;
+/*    margin: 0 auto;
+    margin-bottom: 5px;*/
+}
+
 .carousel-indicators li {
   width: 10px !important;
   height: 10px !important;
@@ -64,3 +76,5 @@ ul {
 .carousel slide {
 
 }
+
+
