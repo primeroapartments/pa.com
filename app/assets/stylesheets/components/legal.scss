@@ -9,10 +9,8 @@ ol.main > li > ol {
 
 ol.main > li > ol > li {
     counter-increment: subsection;
-    list-style-type: none;
 }
 
 ol.main > li > ol > li:before {
     content: counter(root) "." counter(subsection) " ";
 }
-
