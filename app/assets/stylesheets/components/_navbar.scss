@@ -174,3 +174,7 @@
 .font-small {
   font-size: 11px;
 }
+
+.dropdown-toggle:after {
+  content: none !important;
+}
