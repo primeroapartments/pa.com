@@ -1,6 +1,7 @@
 class ApartmentsController < ApplicationController
 
   def index
+    @apartment=Apartment.all
     @apartments = Apartment.where.not(latitude: nil, longitude: nil)
 
     @markers = @apartments.map do |apartment|
@@ -12,7 +13,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
-    @apartments = Apartment.all
+    @apartments = Apartment.find(params[:id])
   end
 
   def new
@@ -20,6 +21,9 @@ class ApartmentsController < ApplicationController
   end
 
   def create
+    @apartment = Aapartment.new(apartment_params)
+    @apartment.save
+    redirect_to @apartment
   end
 
   def edit
@@ -30,5 +34,11 @@ class ApartmentsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def apartment_params
+    params.require(:apartment).permit(:id, :name, :address, :persons,
+      :bathrooms, :description, :apartment_link)
   end
 end
