@@ -4,15 +4,24 @@
 
     <p class="primero d-none d-md-block">Primero Apartments</p>
 
-  <div class="navbar-right hidden-xs hidden-sm">
-    <button class="dropbtn">Book</button>
-      <div class="dropdown-content">
-        <%=link_to "Sheffield", sheffield_path %>
-        <%=link_to "Cardiff", cardiff_path %>
-        <%=link_to "Basingstoke", basingstoke_path %>
-        <%=link_to "Birmingham - coming soon!", birmingham_path %>
-        <%=link_to "Preston - coming soon!", preston_path %>
-      </div>
+  <div class="navbar-right">
+    <div class="btn-group dropdown">
+
+          <!-- <button type="button" class="btn btn-secondary">Action</button> -->
+          <button type="btn" class="dropbtn dropdown-toggle dropdown-toggle-split" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Book
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+            <a class="dropdown-item" href="sheffield">Sheffield</a>
+            <a class="dropdown-item" href="cardiff">Cardiff</a>
+            <a class="dropdown-item" href="basingstoke">Basingstoke</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="birmingham">Birmingham - coming soon!</a>
+            <a class="dropdown-item" href="preston">Preston - coming soon!</a>
+          </div>
+
+    </div>
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav mr-auto">
         <li> <%= link_to "Locations", locations_path, class: "navbar-item navbar-link" %></li>
