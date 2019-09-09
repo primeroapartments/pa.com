@@ -11,8 +11,8 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   var map = new mapboxgl.Map({
   container: 'map', // container id
   style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-  center: [-74.50, 40], // starting position [lng, lat]
-  zoom: 9, // starting zoom
+  center: [-1.7603, 53.3781], // starting position [lng, lat]
+  zoom: 6, // starting zoom
   });
 }
 
