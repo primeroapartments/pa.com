@@ -1,0 +1,194 @@
+<h1>Cardiff apartments</h1>
+
+<h2>apt 1</h2>
+
+<script src="https://s3.amazonaws.com/widgets.tokeet.com/widgets/interstitial/interstitial-widget.js?1554438722"></script>
+<script>
+window.tokeetIWSettings = {
+  "element": "#widget",
+  "engineDomain": "primerocardiff.securelettings.net",
+  "type": "button",
+  "showPrice": true,
+  "showMinimumStay": true,
+  "apiBaseUrl": "https://api.tokeet.com/",
+  "apiMailBaseUrl": "https://mail.tokeet.com",
+  "style": {
+    "button": {
+      "backgroundColor": "#60c063"
+    }
+  }
+};
+</script>
+<div id="widget"></div>
+
+<h2>apt 2</h2>
+
+<h2>Book an apartment</h2>
+<div class="booking">
+  <div class="center">
+<div style="width: 100%"
+         data-tokeet-widget="availability-search"
+         data-website-domain="primerosheffield.mylettings.me"
+         data-orientation="horizontal"
+         data-style-widget-background="#f8f8f8"
+         data-style-button-bg="#061702"
+         data-style-button-color="#fff"
+         data-style-label-color="#061702"
+         data-style-label-size="14"
+         data-style-selected-dates-bg="#299082"
+         data-style-selected-dates-color="#fff"
+         data-booking-widget-css=".booking-widget { font-family: Verdana }"
+        class="availability-search-widget"></div>
+        <script data-tokeet-widget-loader="availability-search"
+        src="https://s3.amazonaws.com/widgets.tokeet.com/widgets/availability/loader.js"></script>
+  </div>
+</div>
+<h2>Sheffield Apartments</h2>
+
+commit c0e57e809ba4663ded49e47602ed072773ed8232
+Merge: 5453771 5518983
+Author: margreet1 <dijkstra.margreet@gmail.com>
+Date:   Mon Sep 2 23:43:10 2019 +0100
+
+    WIP on master: 5453771 add persons bathrooms description and apartment_link to Apartment
+
+diff --cc app/controllers/apartments_controller.rb
+index 5388e0f,5388e0f..2274046
+--- a/app/controllers/apartments_controller.rb
++++ b/app/controllers/apartments_controller.rb
+@@@ -21,7 -21,7 +21,7 @@@ class ApartmentsController < Applicatio
+    end
+  
+    def create
+--    @apartment = Aapartment.new(apartment_params)
+++    @apartment = Apartment.new(apartment_params)
+      @apartment.save
+      redirect_to @apartment
+    end
+@@@ -39,6 -39,6 +39,6 @@@
+    private
+    def apartment_params
+      params.require(:apartment).permit(:id, :name, :address, :persons,
+--      :bathrooms, :description, :apartment_link)
+++      :bathrooms, :description, :apartment_link, :location)
+    end
+  end
+diff --cc app/views/apartments/index.html.erb
+index 137a5eb,137a5eb..19b1d4b
+--- a/app/views/apartments/index.html.erb
++++ b/app/views/apartments/index.html.erb
+@@@ -2,18 -2,18 +2,11 @@@
+  
+  <h1>Apartments</h1>
+  
+--<!-- <table>
+--  <thead>
+--    <tr>
+--      <th>Name</th>
+--      <th>Address</th>
+--      <th colspan="3"></th>
+--    </tr>
+--  </thead>
+--</table> -->
+--
+--<% @apartments.each do |id, apartment| %>
+--  <%= apartment.id %>
+++
+++<%= select(:location, :location_id, [['Sheffield', 1], ['Cardiff', 2], ['Basingstoke', 3]]) %>
+++
+++
+++<% @apartments.each do |apartment| %>
+    <%= apartment.name %>
+    <%= apartment.address %>
+    <%= apartment.persons %>
+@@@ -25,34 -25,34 +18,8 @@@
+    <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+  
+--
+--<!-- <tbody>
+--  <%= @apartments.each do |apartment| %>
+--    <tr>
+--      <td><%= apartment.name %></td>
+--      <td><%= apartment.address %></td>
+--      <td><%= link_to 'Show', apartment %></td>
+--      <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
+--      <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+--    </tr>
+--  <% end %>
+--</tbody> -->
+--
+--<br>
+  <br>
+  <%= link_to 'New Apartment', new_apartment_path %>
+  
+  
+--<form action="/apartments" method="get">
+--  <input type="text" name="location" placeholder="City you want to visit">
+--  <input type="submit">
+--</form>
+--
+--<!-- <div
+--  id="map"
+--  style="width: 100%;
+--  height: 600px;"
+--  data-markers = <%= @markers.to_json %>
+--  data-mapbox-api-key = <%= ENV['MAPBOX_API_KEY'] %>
+--></div> -->
+  
+diff --cc app/views/apartments/new.html.erb
+index e0f7002,e0f7002..e201695
+--- a/app/views/apartments/new.html.erb
++++ b/app/views/apartments/new.html.erb
+@@@ -3,5 -3,5 +3,13 @@@
+    <%= f.text_field :name %>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+++  <%= f.label :persons %>
+++  <%= f.text_field :persons %>
+++  <%= f.label :bathrooms %>
+++  <%= f.text_field :bathrooms %>
+++  <%= f.label :description %>
+++  <%= f.text_field :description %>
+++  <%= f.label :apartment_link %>
+++  <%= f.text_field :apartment_link %>
+    <%= f.submit %>
+  <% end %>
+diff --cc config/routes.rb
+index e99ba2a,e99ba2a..1f99c02
+--- a/config/routes.rb
++++ b/config/routes.rb
+@@@ -16,9 -16,9 +16,11 @@@ Rails.application.routes.draw d
+    get 'birmingham', to: 'apartments#birmingham'
+    get 'preston', to: 'apartments#preston'
+    get 'apartments', to: 'apartments#index'
+--  get 'apartments/new', to: 'apartments#new'
+++  get 'new', to: 'apartments#new'
+++  post 'new', to: 'apartments#new'
+    post 'apartments', to: 'apartments#create'
+  
+++
+    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+    root to: 'pages#home'
+diff --cc db/schema.rb
+index 48ad044,48ad044..028dda5
+--- a/db/schema.rb
++++ b/db/schema.rb
+@@@ -10,7 -10,7 +10,7 @@@
+  #
+  # It's strongly recommended that you check this file into your version control system.
+  
+--ActiveRecord::Schema.define(version: 2019_09_02_133312) do
+++ActiveRecord::Schema.define(version: 2019_09_02_214535) do
+  
+    # These are extensions that must be enabled in order to support this database
+    enable_extension "plpgsql"
+@@@ -26,6 -26,6 +26,7 @@@
+      t.integer "bathrooms"
+      t.text "description"
+      t.string "apartment_link"
+++    t.string "location"
+    end
+  
+  end
