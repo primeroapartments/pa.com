@@ -1,14 +1,16 @@
 class ApartmentsController < ApplicationController
 
   def index
-    @apartment=Apartment.all
     @apartments = Apartment.where.not(latitude: nil, longitude: nil)
 
     @markers = @apartments.map do |apartment|
       {
         lat: apartment.latitude,
         lng: apartment.longitude
+        # infoWindow: render_to_string(partial: "info_window", locals: { apartment: apartment })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
+      # en d
     end
   end
 
