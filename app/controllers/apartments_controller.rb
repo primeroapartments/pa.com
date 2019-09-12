@@ -1,16 +1,20 @@
 class ApartmentsController < ApplicationController
-
-  def index
-    @apartment=Apartment.all
-    @apartments = Apartment.where.not(latitude: nil, longitude: nil)
+  def locations
+    @apartments = Apartment.geocoded #returns flats with coordinates
 
     @markers = @apartments.map do |apartment|
       {
         lat: apartment.latitude,
-        lng: apartment.longitude
+        lng: apartment.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { apartment: apartment })
       }
-    end
   end
+end
+
+  def index
+    @apartments = Apartment.all
+  end
+
 
   def show
     @apartments = Apartment.find(params[:id])

@@ -16,10 +16,9 @@
 #
 default: &default
   adapter: postgresql
+  pool: 5 # Specifies the maximum number of connections that can be opened
+  timeout: 5000 # in milliseconds. This is how long the app will wait for a database response
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default

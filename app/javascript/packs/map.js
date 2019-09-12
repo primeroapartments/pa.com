@@ -16,25 +16,41 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   });
 }
 
+var geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-77.032, 38.913]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'Washington, D.C.'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [-122.414, 37.776]
+    },
+    properties: {
+      title: 'Mapbox',
+      description: 'San Francisco, California'
+    }
+  }]
+};
 
-  // const markers = JSON.parse(mapElement.dataset.markers);
+// add markers to map
+geojson.features.forEach(function(marker) {
 
-  // markers.forEach((marker) => {
-  //   new mapboxgl.Marker()
-  //     .setLngLat([marker.lng, marker.lat])
-  //     .addTo(map);
-  // })
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
 
-  // if (markers.length === 0) {
-  //    map.setZoom(1);
-  //  } else if (markers.length === 1) {
-  //    map.setZoom(14);
-  //    map.setCenter([markers[0].lng, markers[0].lat]);
-  //  } else {
-  //    const bounds = new mapboxgl.LngLatBounds();
-  //    markers.forEach((marker) => {
-  //      bounds.extend([marker.lng, marker.lat]);
-  //    });
-  //    map.fitBounds(bounds, { duration: 10000, padding: 75 })
-  //  }
-// }
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map);
+});

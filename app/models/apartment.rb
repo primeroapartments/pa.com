@@ -1,5 +1,5 @@
 class Apartment < ApplicationRecord
-  validates_presence_of(:id, :name, :address, :persons, :bathrooms,
+  validates_presence_of(:name, :address, :persons, :bathrooms,
     :description, :apartment_link)
 
   geocoded_by :address
