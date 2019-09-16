@@ -31,16 +31,14 @@
 
 <!-- apartment 4 -->
 
-<div class="btn">
-<a href="https://primerosheffield.securelettings.net/checkout?rental_id=6cf30a63-ed0f-432b-b8cc-497b87fa5a8c&start=[booking_start_date]&end=[booking_end_date]" target="_blank">book now</a>
 
-</div>
 
 <br>
 
 <hr class="style-two">
 
 <div class="container">
+<% @apartments.each do |apartment| %>
   <div class="row">
     <div class="col-6">
       <div id="aptcarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
@@ -64,21 +62,27 @@
       </div>
     </div>
     <div class="col-4">
-      <h3>The Fitzgerald</h3>
-      <h6>123 Street, Sheffield, Apartment 4</h6>
+      <h3> <%= apartment.name %></h3>
+      <h6> <%= apartment.address %></h6>
     <div class="w-100"></div>
-        <ul>• Sleeps up to 4 people</ul>
-        <ul>• 1 bathroom</ul>
+        <ul>• Sleeps up to <%= apartment.persons %> people</ul>
+        <ul>• Bathrooms: <%= apartment.bathrooms %></ul>
         <ul>• Fully furnished</ul>
         <ul>• Bedding and towels included</ul>
         <ul>• Fast Wifi</ul>
     <div class="w-100"></div>
-        <p>Choose smart when you stay in Sheffield. This 1 bedroom Sheffield apartment accommodates up to 4 guests in modern surroundings. Part of a new development, it has been designed to appeal to discerning guests who are visiting Sheffield on business or for pleasure. This is the largest apartment we offer - so come and make yourself comfortable!</p>
+        <p> <%= apartment.description %></p>
     </div>
     <div class="col">
-      <a href="#" class="dropbtn">Book</a>
+      <div>
+        <p>From: £<%= apartment.price %></p>
+      </div>
+      <div class="btn">
+        <a href= <%= apartment.apartment_link %> target="_blank" class="dropbtn">Book</a>
+      </div>
     </div>
   </div>
 </div>
-
 <hr class="style-two">
+<% end %>
+

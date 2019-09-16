@@ -9,9 +9,11 @@ class ApartmentsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { apartment: apartment })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
-
-
     end
+  end
+
+  def sheffield
+    @apartments = Apartment.all
   end
 
   def index
@@ -28,7 +30,7 @@ class ApartmentsController < ApplicationController
   end
 
   def create
-    @apartment = Aapartment.new(apartment_params)
+    @apartment = Apartment.new(apartment_params)
     @apartment.save
     redirect_to @apartment
   end

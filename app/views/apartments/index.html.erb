@@ -2,31 +2,41 @@
 
 <h1>Apartments</h1>
 
-<% @apartments.each do |id, apartment| %>
-  <%= apartment.id %>
+<% @apartments.each do |apartment| %>
   <%= apartment.name %>
   <%= apartment.address %>
   <%= apartment.persons %>
   <%= apartment.bathrooms %>
   <%= apartment.description %>
   <%= apartment.apartment_link %>
+  <%= apartment.price %>
   <td><%= link_to 'Show', apartment %></td>
   <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
   <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 
 
-<!-- <tbody>
-  <%= @apartments.each do |apartment| %>
-    <tr>
-      <td><%= apartment.name %></td>
-      <td><%= apartment.address %></td>
-      <td><%= link_to 'Show', apartment %></td>
-      <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
-      <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</tbody> -->
+<div style="width:350px"
+        data-website-id="108a4d7b-9826-4fb3-9bb8-80f2f9fbeb8e"
+        data-tokeet-widget="booking"
+        data-booking-domain="https://primerosheffield.securelettings.net"
+        data-account-id="1498576319.9833"
+        data-rental-id="f6cabb58-5e0e-47ce-aa1b-76ad7b79eb62"
+        data-orientation="vertical"
+        data-style-widget-background="#F8F8F8"
+        data-style-button-bg="#00bcd3"
+        data-style-button-color="#FFF"
+        data-style-label-color="#00bcd3"
+        data-style-label-size="14"
+        data-date-format="DD-MM-YYYY"
+        data-style-blocked-dates-bg="#b63e3e"
+        data-style-selected-dates-bg="#299082"
+        data-style-selected-dates-color="#FFF"
+        data-booking-widget-css=".booking-widget { font-family: Arial }
+          .label.required:after{ color: #FABC3C; }"
+        class="booking-widget"></div>
+        <script data-tokeet-widget-loader="booking" async
+        src="https://s3.amazonaws.com/widgets.tokeet.com/widgets/booking/widget-loader.js"></script>
 
 <br>
 <br>
