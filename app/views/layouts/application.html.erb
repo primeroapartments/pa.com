@@ -8,7 +8,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%#= stylesheet_pack_tag 'map' %>
+    <%= stylesheet_pack_tag 'map' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Playfair+Display+SC:400" rel="stylesheet">
@@ -30,6 +30,7 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= yield(:after_js) %>
     <%= javascript_pack_tag 'map' %>
 
     <%= render "components/footer" %>
