@@ -1,5 +1,4 @@
 class Apartment < ApplicationRecord
-  has_one :location
 
   validates_presence_of(
     :name,

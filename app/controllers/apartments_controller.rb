@@ -13,11 +13,15 @@ class ApartmentsController < ApplicationController
   end
 
   def sheffield
-    @apartments = Apartment.find(sheffield)
+    @apartments = Apartment.where(location: "sheffield")
   end
 
   def cardiff
     @apartments = Apartment.where(location: "cardiff")
+  end
+
+  def basingstoke
+    @apartments = Apartment.where(location: "basingstoke")
   end
 
   def index
