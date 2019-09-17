@@ -13,7 +13,11 @@ class ApartmentsController < ApplicationController
   end
 
   def sheffield
-    @apartments = Apartment.all
+    @apartments = Apartment.find(sheffield)
+  end
+
+  def cardiff
+    @apartments = Apartment.where(location: "cardiff")
   end
 
   def index
@@ -31,8 +35,15 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = Apartment.new(apartment_params)
-    @apartment.save
+    if @apartment.location == sheffield
+      @apartment.save to sheffield.html.erb
+    elsif @apartment.location == cardiff
+      saveto cardiff.html.erb
+    else
+      save to basingstoke.html.erb
+
     redirect_to @apartment
+    end
   end
 
   def edit

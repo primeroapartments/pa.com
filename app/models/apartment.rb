@@ -1,4 +1,6 @@
 class Apartment < ApplicationRecord
+  has_one :location
+
   validates_presence_of(
     :name,
     :address,
@@ -6,6 +8,7 @@ class Apartment < ApplicationRecord
     :bathrooms,
     :description,
     :apartment_link,
+    :location,
     :price,
   )
 
