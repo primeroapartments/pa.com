@@ -2,8 +2,8 @@
   <h2>Book your Sheffield apartment</h2>
 </div>
 
-
-<div class="btn">
+<br>
+<div class="btn, text-center, margin-top">
   <script src="https://s3.amazonaws.com/widgets.tokeet.com/widgets/interstitial/interstitial-widget.js?1554438722"></script>
     <script>
     window.tokeetIWSettings = {
@@ -26,7 +26,7 @@
     </script>
   <div id="widget"></div>
 </div>
-
+<br><br><br><br>
 <hr class="style-one">
 
 <!-- apartment 4 -->
@@ -35,7 +35,11 @@
 
 <br>
 
+<div class="text-center, margin-top">
+  <h2>Check out all apartments</h2>
+</div>
 <hr class="style-two">
+
 
 <% @apartments.each do |apartment| %>
 <div class="container">
@@ -50,13 +54,16 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="/images/sheffield/sheffield_1.jpg" alt="First slide">
+              <img class="d-block w-100" src="/images/sheffield/<%= apartment.photo1 %>" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="/images/sheffield/sheffield_2.jpg" alt="Second slide">
+              <img class="d-block w-100" src=" /images/sheffield/<%= apartment.photo2 %>" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="/images/sheffield/sheffield_3.jpg" alt="Third slide">
+              <img class="d-block w-100" src="/images/sheffield/<%= apartment.photo3 %>" alt="Third slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="/images/sheffield/<%= apartment.photo4 %>" alt="Fourth slide">
             </div>
         </div>
       </div>

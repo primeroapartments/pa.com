@@ -6,10 +6,20 @@ header {
   background-size: cover;
  }
 
-header h1 {
+header h2 {
   color: white;
-  padding: 10rem;
-  font: 100px "Arial";
+  // border-radius: 2vh;
+  // background-color: #061704;
+  padding: 1rem;
+  text-align: left;
+  font: 60px 'Bungee Inline', cursive;
+}
+
+header h4 {
+  color: white;
+  padding: 1rem;
+  // font: 70px 'Fugaz One', cursive;
+  font: 60px 'Bowlby One SC', cursive;
   text-align: left;
 }
 
@@ -20,3 +30,8 @@ svg {
   height: 10vw;
   /* set height to pixels if you want angle to change with screen width */
 }
+
+// font-family: 'Abril Fatface', cursive;
+// font-family: 'Amatic SC', cursive;
+// font-family: 'Bowlby One SC', cursive;
+// font-family: 'Bungee Inline', cursive;

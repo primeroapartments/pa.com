@@ -1,13 +1,14 @@
 .homepage_card {
   overflow: hidden;
-  height: 400px;
-  width: 600px;
-  background: #061704;
+  height: 320px;
+  width: 350px;
+  // background: #061704;
+  background: #205d67;
   color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: right;
   align-items: right;
   margin-right: 6vh;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px 10px 10px 10px;
 }
