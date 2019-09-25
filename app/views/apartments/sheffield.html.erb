@@ -73,16 +73,22 @@
       <h6> <%= apartment.address %></h6>
     <div class="w-100"></div>
         <ul>• Sleeps up to <%= apartment.persons %> people</ul>
+        <ul>• 1 King-size bed, 2 single-beds, 1 sofa-bed</ul>
         <ul>• Bathrooms: <%= apartment.bathrooms %></ul>
         <ul>• Fully furnished</ul>
         <ul>• Bedding and towels included</ul>
+        <ul>• Fully equiped kitchen</ul>
+        <ul>• Size - add column to model</ul>
+        <ul>• Key-free access</ul>
+        <ul>• #floor - add column to model</ul>
+        <ul>• Elevator</ul>
         <ul>• Fast Wifi</ul>
     <div class="w-100"></div>
         <p> <%= apartment.description %></p>
     </div>
     <div class="col">
       <div>
-        <p>From: £<%= apartment.price %></p>
+        <p>From: £<%= apartment.price %></p> per night
       </div>
       <div class="btn">
         <a href= <%= apartment.apartment_link %> target="_blank" class="dropbtn">Book</a>
