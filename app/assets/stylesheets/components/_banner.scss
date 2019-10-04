@@ -1,4 +1,4 @@
-header {
+.banner {
   position: relative;
   height: 600px;
   // background-image: linear-gradient(#3B4371, #F3904F);
@@ -6,7 +6,7 @@ header {
   background-size: cover;
  }
 
-header h2 {
+.banner h2 {
   color: white;
   // border-radius: 2vh;
   // background-color: #061704;
@@ -15,7 +15,7 @@ header h2 {
   font: 60px 'Bungee Inline', cursive;
 }
 
-header h4 {
+.banner h4 {
   color: white;
   padding: 1rem;
   // font: 70px 'Fugaz One', cursive;

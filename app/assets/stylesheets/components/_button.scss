@@ -2,7 +2,7 @@
   text-align: justify !important;
   justify-content: space-between !important;
   padding: .8rem 1.2rem;
-  background: #061704;
+  background: transparent;
   border-radius: 6px;
   color: white;
   font-weight: 300;
@@ -17,10 +17,10 @@
   text-align: justify !important;
   justify-content: space-between !important;
   padding: .8rem 1.2rem;
-  background: #061704;
+  background: white;
   border-radius: 6px;
-  color: white;
-  font-weight: 300;
+  color: #061704;
+  font-weight: 500;
   line-height: 1rem;
   letter-spacing: 1px;
   border: 5px;
@@ -60,7 +60,6 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
-
 }
 
 .dropdown:hover .dropbtn {
