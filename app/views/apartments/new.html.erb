@@ -1,21 +1,45 @@
 <%= form_for(@apartment) do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %><br />
+  <%= f.text_field :name %><br>
 
   <%= f.label :address %>
-  <%= f.text_field :address %><br />
+  <%= f.text_field :address %><br>
 
   <%= f.label :persons %>
-  <%= f.text_field :persons %><br />
+  <%= f.text_field :persons %><br>
 
   <%= f.label :bathrooms %>
-  <%= f.text_field :bathrooms %><br />
+  <%= f.text_field :bathrooms %><br>
 
   <%= f.label :description %>
-  <%= f.text_field :description %><br />
+  <%= f.text_field :description %><br>
 
   <%= f.label :apartment_link %>
-  <%= f.text_field :apartment_link %><br />
+  <%= f.text_field :apartment_link %><br>
 
-  <%= f.submit %>
+  <%= f.label :location %>
+  <%= f.text_field :location %><br>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %><br>
+
+  <%= f.label :photo1 %>
+  <%= f.text_field :photo1 %><br>
+
+  <%= f.label :photo2 %>
+  <%= f.text_field :photo2 %><br>
+
+  <%= f.label :photo3 %>
+  <%= f.text_field :photo3 %><br>
+
+  <%= f.label :photo4 %>
+  <%= f.text_field :photo4 %><br>
+
+  <%= f.label :size %>
+  <%= f.text_field :size %><br>
+
+  <%= f.label :floor %>
+  <%= f.text_field :floor %><br>
+
+  <%= f.submit %> <br><br>
 <% end %>

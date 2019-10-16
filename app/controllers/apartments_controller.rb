@@ -38,15 +38,15 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = Apartment.new(apartment_params)
-    if @apartment.location == sheffield
-      @apartment.save to sheffield.html.erb
-    elsif @apartment.location == cardiff
-      save to cardiff.html.erb
-    else
-      save to basingstoke.html.erb
+    # if @apartment.location == sheffield
+    #   @apartment.save to sheffield.html.erb
+    # elsif @apartment.location == cardiff
+    #   save to cardiff.html.erb
+    # else
+    #   save to basingstoke.html.erb
 
     redirect_to @apartment
-    end
+    # end
   end
 
   def edit
@@ -54,11 +54,9 @@ class ApartmentsController < ApplicationController
   end
 
   def update
-    @apartment = Apartment.update(apartment_params)
-
-       person = current_account.people.find(params[:id])
-    person.update!(person_params)
-    redirect_to person
+    @apartment = Apartment.find(params[:id])
+    @apartment.update!(apartment_params)
+    redirect_to apartments_path
   end
 
   def destroy
