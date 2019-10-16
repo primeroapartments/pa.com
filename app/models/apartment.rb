@@ -9,6 +9,12 @@ class Apartment < ApplicationRecord
     :apartment_link,
     :location,
     :price,
+    :photo1,
+    :photo2,
+    :photo3,
+    :photo4,
+    :size,
+    :floor,
   )
 
   geocoded_by :address

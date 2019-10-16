@@ -29,7 +29,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
-    @apartments = Apartment.find(params[:id])
+    @apartments = Apartment.where(params[:location])
   end
 
   def new
@@ -38,15 +38,15 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = Apartment.new(apartment_params)
-    @apartment.save
-    # if @apartment.location == sheffield
-    #   @apartment.save to sheffield.html.erb
-    # elsif @apartment.location == cardiff
-    #   save to cardiff.html.erb
-    # else
-    #   save to basingstoke.html.erb
-
-    redirect_to @apartment
+    # if @apartment.save
+    #   redirect_to @apartment
+    if @apartment.location == sheffield
+      @apartment.save_to sheffield_path
+    elsif @apartment.location == cardiff
+      save to cardiff_path
+    else
+      @apartment.save_to basingstoke_path
+    end
     # end
   end
 
@@ -61,11 +61,14 @@ class ApartmentsController < ApplicationController
   end
 
   def destroy
+    @apartment = Apartment.find(params[:id])
+    @apartment.destroy!
   end
 
   private
   def apartment_params
-    params.require(:apartment).permit(:id, :name, :address, :persons,
-      :bathrooms, :description, :apartment_link)
+    params.require(:apartment).permit(:name, :address, :persons,
+      :bathrooms, :description, :apartment_link, :location, :price, :photo1,
+      :photo2, :photo3, :photo4, :size, :floor)
   end
 end

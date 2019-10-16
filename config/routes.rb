@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :apartments, only: [:new, :edit, :show, :create, :index, :update, :destroy]
 
+
   get 'contact', to: 'pages#contact'
   get 'faq', to: 'pages#faq'
   get 'about', to: 'pages#about'
