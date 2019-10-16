@@ -28,7 +28,6 @@ class ApartmentsController < ApplicationController
     @apartments = Apartment.all
   end
 
-
   def show
     @apartments = Apartment.find(params[:id])
   end
@@ -42,7 +41,7 @@ class ApartmentsController < ApplicationController
     if @apartment.location == sheffield
       @apartment.save to sheffield.html.erb
     elsif @apartment.location == cardiff
-      saveto cardiff.html.erb
+      save to cardiff.html.erb
     else
       save to basingstoke.html.erb
 
@@ -55,6 +54,11 @@ class ApartmentsController < ApplicationController
   end
 
   def update
+    @apartment = Apartment.update(apartment_params)
+
+       person = current_account.people.find(params[:id])
+    person.update!(person_params)
+    redirect_to person
   end
 
   def destroy
