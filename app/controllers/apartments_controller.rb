@@ -38,6 +38,7 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = Apartment.new(apartment_params)
+    @apartment.save
     # if @apartment.location == sheffield
     #   @apartment.save to sheffield.html.erb
     # elsif @apartment.location == cardiff
