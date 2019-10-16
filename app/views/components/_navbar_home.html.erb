@@ -5,10 +5,13 @@
 <nav>
   <div class="nav-wrapper_home">
     <div class="row">
-<!-- left side of navbar -->
+<!-- logo -->
       <div class="col-4">
-        <ul class="right hide-on-med-and-down">
-          <ul class="nav navbar-nav btn-nav_home">
+        <a href="/" class="navbar-brand center"><%= image_tag "/images/transparent_closer.png", alt: "logo" %></a>
+      </div>
+      <div class="col-4">
+        <ul class="right">
+          <ul class="nav navbar-nav btn-nav_home hide-on-med-and-down">
             <li> <%= link_to "Locations", locations_path, class: "navbar-item navbar-link_home" %></li>
           </ul>
         <!-- <div class="btn-group dropdown"> -->
@@ -24,16 +27,11 @@
         </div>
       </div>
 
-<!-- center of navbar -->
-      <div class="col-4">
-        <a href="/" class="navbar-brand center"><%= image_tag "/images/transparent_closer.png", alt: "logo" %></a>
-      </div>
 
 <!-- right side of navbar -->
       <div class="col-4">
         <ul class="left hide-on-med-and-down">
           <ul class="nav navbar-nav btn-nav_home">
-            <li> <%= link_to "Testimonials", locations_path, class: "navbar-item navbar-link_home" %></li>
             <li> <%= link_to "FAQ", faq_path, class: "navbar-item navbar-link_home" %></li>
           </ul>
         </ul>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :apartments, only: [:new, :edit, :show, :create, :index, :destroy]
+  resources :apartments, only: [:new, :edit, :show, :create, :index, :update, :destroy]
 
   get 'contact', to: 'pages#contact'
   get 'faq', to: 'pages#faq'
@@ -15,9 +15,14 @@ Rails.application.routes.draw do
   get 'basingstoke', to: 'apartments#basingstoke'
   get 'birmingham', to: 'apartments#birmingham'
   get 'preston', to: 'apartments#preston'
+
   get 'apartments', to: 'apartments#index'
   get 'apartments/new', to: 'apartments#new'
   post 'apartments', to: 'apartments#create'
+  get 'apartments/:id', to: 'apartments#show'
+  get 'apartments/:id/edit/', to: 'apartments#edit'
+  patch 'apartments/:id', to: 'apartments#update'
+  delete 'apartments/:id', to: 'apartments#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
