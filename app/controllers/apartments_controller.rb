@@ -38,15 +38,15 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = Apartment.new(apartment_params)
-    # if @apartment.save
-    #   redirect_to @apartment
-    if @apartment.location == sheffield
-      @apartment.save_to sheffield_path
-    elsif @apartment.location == cardiff
-      save to cardiff_path
-    else
-      @apartment.save_to basingstoke_path
-    end
+    @apartment.save
+    redirect_to apartments_path
+    # if @apartment.location == sheffield
+    #   @apartment.save_to sheffield_path
+    # elsif @apartment.location == cardiff
+    #   save to cardiff_path
+    # else
+    #   @apartment.save_to basingstoke_path
+    # end
     # end
   end
 
