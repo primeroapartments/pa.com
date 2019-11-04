@@ -1,0 +1,92 @@
+body{
+      background: #4b2c34;
+    }
+
+    .nav{
+      position: fixed;
+      background: rgba(0, 0, 0, 0);
+      padding:0px 20px;
+      height: 200px;
+      display: inline-block;
+    }
+
+    nav-wrapper_home{
+      text-align: center;
+      display: inline-block;
+      color: white;
+    }
+
+    .nav-background{
+      background-color: #4b2c34;
+      opacity: 0.5;
+    }
+
+    .box {
+      height: 350px;
+      width: 400px;
+      background: #233714;
+      border-radius: 20px;
+      box-shadow: 20px 20px #f4e5c2;
+      padding: 20px 20px 20px 20px;
+      color: white;
+    }
+
+    .box-button {
+      height: 20px;
+      width: 40px;
+      border-radius: 20px;
+      text-color: #233714;
+      background: #f4e5c2;
+    }
+
+    nav ul {
+      padding-top: 50px !important;
+      display: inline-block !important;
+      text-align: center !important;
+    }
+
+    nav li a:hover{
+/*      background: #061704;*/
+      color:white;
+    }
+
+    button:focus{
+      outline: none;
+      background-color: #C0C0C0 !important;
+    }
+
+.navbar-brand-home img {
+    height: 300px;
+    position: center;
+    padding-top: 100px;
+    padding-left: 100px;
+}
+
+.btn-nav_home {
+  text-align: justify !important;
+  justify-content: space-between !important;
+  padding: .8rem 1.2rem;
+  background: transparent !important;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  line-height: 1rem;
+  letter-spacing: 1px;
+  border: 5px;
+  cursor: pointer !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-nav_home :hover {
+  opacity: 0.6;
+  text-decoration: none !important;
+}
+
+.navbar-link_home {
+  color: white;
+  font-size: 14px;
+}
+.navbar-link_home:hover {
+  opacity: .8;
+  text-decoration: none;
+}
