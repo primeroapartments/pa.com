@@ -12,6 +12,7 @@
                 <form class="form-inline my-2 my-md-0"> </form>
             </div>
         </div>
+
       <div class="banner">
         <div id="wrapper">
             <!-- Sidebar -->
@@ -55,21 +56,41 @@
               <div class="col-5">
                 <div class="container-fluid">
                   <div class="box">
-                    <h3>Destination</h1>
+                    <h3>Destination</h3>
+                      <!-- <div class="btn-group dropdown">
+                        <button type="btn" class="dropbtn dropdown-toggle dropdown-toggle-split" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Book
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                          <a class="dropdown-item" href="sheffield">Sheffield</a>
+                          <a class="dropdown-item" href="cardiff">Cardiff</a>
+                          <a class="dropdown-item" href="basingstoke">Basingstoke</a>
+                        </div>
+                      </div> -->
+                      <%= (:location) %>
+                      <br>
+                      <%=  %>
+                      <% if params[:location] == "sheffield" %>
+                        <%= render 'components/book_sheffield' %>
+                      <% elsif params[:location] == "cardiff" %>
+                        <%= render 'components/book_cardiff' %>
+                      <% else %>
+                        <%= render 'components/book_basingstoke' %>
+                      <% end %>
                   </div>
                 </div>
-              </div>
               <div class="col-1">
               </div>
-              </div>
-            </div><!-- /#page-content-wrapper -->
+            </div>
           </div>
-        </div> <!-- /#wrapper -->
-        <div>
-          <br>
-          <br>
+        </div><!-- /#page-content-wrapper -->
+      </div> <!-- /#wrapper -->
+    </div> <!-- banner -->
+      <div>
+        <br>
+        <br>
           <h1>hi</h1>
-        </div>
+      </div>
 
         <!-- Bootstrap core JavaScript -->
         <script src="js/jquery.min.js"></script>
