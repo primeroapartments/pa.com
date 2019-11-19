@@ -29,6 +29,8 @@
   text-decoration: none;
 }
 
+.dropbtn:hover {}
+
 .dropbtndark {
   text-align: justify !important;
   justify-content: space-between !important;
@@ -78,8 +80,13 @@
   display: block;
 }
 
-.dropdown:hover .dropbtn {
+.dropdown:hover .dropbtndark {
   background-color: #061704;
+  opacity: 0.8;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: white;
   opacity: 0.8;
 }
 

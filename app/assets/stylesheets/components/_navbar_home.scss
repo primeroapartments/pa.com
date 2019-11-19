@@ -2,7 +2,7 @@ body{
       background: #4b2c34;
     }
 
-    .nav{
+    .nav-home{
       position: fixed;
       background: rgba(0, 0, 0, 0);
       padding:0px 20px;
@@ -10,18 +10,25 @@ body{
       display: inline-block;
     }
 
-    nav-wrapper_home{
-      text-align: center;
-      display: inline-block;
-      color: white;
+    .navbar-home {
+      background: rgba(255,255,255,0);
+      transition: all 0.3s ease;
+      height: 110px;
+      padding: .5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0px;
+      z-index: 3;
     }
 
-    .nav-background{
+    .nav-background-home{
       background-color: #4b2c34;
       opacity: 0.5;
     }
 
-    .box {
+    .box-home {
       height: 350px;
       width: 400px;
       background: #233714;
@@ -31,7 +38,7 @@ body{
       color: white;
     }
 
-    .box-button {
+    .box-button-home {
       height: 20px;
       width: 40px;
       border-radius: 20px;
@@ -39,18 +46,18 @@ body{
       background: #f4e5c2;
     }
 
-    nav ul {
+    nav-home ul {
       padding-top: 50px !important;
       display: inline-block !important;
       text-align: center !important;
     }
 
-    nav li a:hover{
+    nav-home li a:hover{
 /*      background: #061704;*/
       color:white;
     }
 
-    button:focus{
+    button-home:focus{
       outline: none;
       background-color: #C0C0C0 !important;
     }
@@ -62,7 +69,7 @@ body{
     padding-left: 100px;
 }
 
-.btn-nav_home {
+.btn-nav-home {
   text-align: justify !important;
   justify-content: space-between !important;
   padding: .8rem 1.2rem;
@@ -77,16 +84,22 @@ body{
   transition: all 0.3s ease-in-out;
 }
 
-.btn-nav_home :hover {
+.btn-nav-home :hover {
   opacity: 0.6;
   text-decoration: none !important;
 }
 
-.navbar-link_home {
+.navbar-item-home {
+  cursor: pointer;
+  padding: 0 30px;
+}
+/* Navbar link */
+.navbar-link-home {
   color: white;
   font-size: 14px;
 }
-.navbar-link_home:hover {
-  opacity: .8;
+.navbar-link-home:hover {
+  color: white;
   text-decoration: none;
+  opacity: .8;
 }

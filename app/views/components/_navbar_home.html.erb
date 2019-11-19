@@ -1,118 +1,57 @@
-      <html>
-        <div class="nav navbar navbar-expand navbar-dark transparent">
-          <a href="/" class="navbar-brand-home center"><%= image_tag "/images/transparent_closer.png", alt: "logo" %></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse" id="navbarsExample02">
-                <ul class="navbar-nav mr-auto">
-                  <a href="#menu-toggle" id="menu-toggle" class="navbar-brand">
-            <span class="navbar-toggler-icon"></span></a>
-                    <li class="nav-item active"> <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a> </li>
-
-                </ul>
-                <form class="form-inline my-2 my-md-0"> </form>
-            </div>
+<nav class="nav-home navbar-home navbar-expand navbar-dark transparent">
+  <a href="/" class="navbar-brand-home center"><%= image_tag "/images/transparent_closer.png", alt: "logo" %></a>
+    <div class="navbar-right">
+      <div class="btn-group dropdown">
+        <button type="btn" class="dropbtn dropdown-toggle dropdown-toggle-split" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Book<span class="sr-only">Toggle Dropdown</span></button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+            <a class="dropdown-item" href="sheffield">Sheffield</a>
+            <a class="dropdown-item" href="cardiff">Cardiff</a>
+            <a class="dropdown-item" href="basingstoke">Basingstoke</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="birmingham">Birmingham - coming soon!</a>
+            <a class="dropdown-item" href="preston">Preston - coming soon!</a>
+          </div>
         </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav mr-auto">
+          <li> <%= link_to "Locations", locations_path, class: "navbar-item-home navbar-link-home" %></li>
+          <li> <%= link_to "FAQ", faq_path, class: "navbar-item-home navbar-link-home" %></li>
+          </ul>
+        </div>
+      </div>
+
+<!-- Dropdown appearing on mobile only -->
+  <div class="navbar-item navbar-link d-lg-none d-xl-none">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+      <li> <a href="locations">Locations</a></li>
+      <li> <a href="faq">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
       <div class="banner">
-        <div id="wrapper">
-            <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand"> <a href="#"> Primero Apartments </a> </li>
-                    <li> <a href="#">Book</a> </li>
-                    <li> <a href="sheffield"> • Sheffield</a> </li>
-                    <li> <a href="cardiff"> • Cardiff</a> </li>
-                    <li> <a href="basingstoke"> • Basingstoke</a> </li>
-                    <br>
-                    <!-- <li> <a href="locations">Locations</a> </li> -->
-                    <li> <a href="faq">FAQ</a> </li>
-                    <li> <a href="about">About</a> </li>
-                    <li> <a href="contact">Contact</a> </li>
-                    <br>
-                    <li> <a href="#">T&Cs</a> </li>
-                    <li> <a href="privacy_policy">Privacy Policy</a> </li>
-                </ul>
-            </div> <!-- /#sidebar-wrapper -->
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <div class="row">
-              <div class="col-6">
-                <div class="container-fluid">
-                    <h1>Primero Apartments</h1>
-                    <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. <br>When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas. </p>
-                    <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                </div>
+        <video autoplay muted loop id="myvid">
+            <source src="<%= 'background_video.mp4' %>" type="video/mp4">
+          </video>
+          <div class="banner-content">
+            <h1>Primero Apartments</h1>
+            <p>Quality Service Apartments in</p>
+
+            <!-- <div class="col-xs-12 col-sm-6">
+              <div class="homepage_card blue">
+                <h3>Text</h3>
+                <p class="explanation">Text</p>
               </div>
-              <div class="col-5">
-                <div class="container-fluid">
-                  <div class="box">
-                    <h3>Destination</h3>
-                      <!-- <div class="btn-group dropdown">
-                        <button type="btn" class="dropbtn dropdown-toggle dropdown-toggle-split" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Book
-                          <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                          <a class="dropdown-item" href="sheffield">Sheffield</a>
-                          <a class="dropdown-item" href="cardiff">Cardiff</a>
-                          <a class="dropdown-item" href="basingstoke">Basingstoke</a>
-                        </div>
-                      </div> -->
-                      <%= (:location) %>
-                      <br>
-                      <%=  %>
-                      <% if params[:location] == "sheffield" %>
-                        <%= render 'components/book_sheffield' %>
-                      <% elsif params[:location] == "cardiff" %>
-                        <%= render 'components/book_cardiff' %>
-                      <% else %>
-                        <%= render 'components/book_basingstoke' %>
-                      <% end %>
-                  </div>
-                </div>
-              <div class="col-1">
-              </div>
-            </div>
+            </div> -->
           </div>
-        </div><!-- /#page-content-wrapper -->
-      </div> <!-- /#wrapper -->
-    </div> <!-- banner -->
+        <!-- <div class="banner-gradient"></div> -->
+      </div> <!-- banner -->
       <div>
         <br>
         <br>
           <h1>hi</h1>
       </div>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-
-        <!-- Menu Toggle Script -->
-        <script>
-          $(function(){
-            $("#menu-toggle").click(function(e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-
-            $(window).resize(function(e) {
-              if($(window).width()<=768){
-                $("#wrapper").removeClass("toggled");
-              }else{
-                $("#wrapper").addClass("toggled");
-              }
-            });
-          });
-
-        </script>
-
-  </html>
