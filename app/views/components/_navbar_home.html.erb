@@ -46,7 +46,29 @@
                 <p class="explanation">Text</p>
               </div>
             </div> -->
+          <div>
+<!-- booking box -->
+            <label class="wrapper" for="states">Where would you like to go?>
+            <div class="button dropdown">
+              <select id="locationselector">
+                 <option value="red">Basingstoke</option>
+                 <option value="yellow">Cardiff</option>
+                 <option value="blue">Sheffield</option>
+              </select>
+            </div>
+
+            <div class="output">
+              <div id="red" class="locations red">
+                <%= render 'components/book_basingstoke' %></div>
+              <div id="yellow" class="locations yellow">
+                <%= render 'components/book_cardiff' %></div>
+              <div id="blue" class="locations blue">
+                <%= render 'components/book_sheffield' %></div>
+            </div>
+
+<!-- booking box end -->
           </div>
+        </div>
         <!-- <div class="banner-gradient"></div> -->
       </div> <!-- banner -->
       <div>
@@ -54,4 +76,14 @@
         <br>
           <h1>hi</h1>
       </div>
+
+<!-- js for bookings -->
+<script>
+  $(function() {
+  $('#locationselector').change(function(){
+    $('.locations').hide();
+    $('#' + $(this).val()).show();
+  });
+});
+</script>
 
