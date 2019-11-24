@@ -1,40 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light static-top">
-  <!-- Logo -->
-  <a href="/" class="navbar-brand"><%= image_tag "high_res_round.png", alt: "logo" %></a>
+<!-- Navigation -->
+<nav class="navbar nav-primero-page navbar-expand-lg static-top">
+  <div class="container-fluid">
 
-    <p class="primero d-none d-md-block">Primero Apartments</p>
-
-  <div class="navbar-right">
-    <div class="btn-group dropdown">
-        <button type="btn" class="dropbtndark dropdown-toggle dropdown-toggle-split" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Book
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-            <a class="dropdown-item" href="sheffield">Sheffield</a>
-            <a class="dropdown-item" href="cardiff">Cardiff</a>
-            <a class="dropdown-item" href="basingstoke">Basingstoke</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="birmingham">Birmingham - coming soon!</a>
-            <a class="dropdown-item" href="preston">Preston - coming soon!</a>
+    <div class="logo">
+      <a href="#">
+        <%= image_tag "high_res_round.png", alt: "logo" %>
+      </a>
+      <span class="d-none d-md-inline-block">Primero Apartments</span>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <div class="dropdown">
+            <button type="button" class="btn btn-primero dropdown-toggle" data-toggle="dropdown">
+              Book
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="sheffield">Sheffield</a>
+              <a class="dropdown-item" href="cardiff">Cardiff</a>
+              <a class="dropdown-item" href="basingstoke">Basingstoke</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="birmingham">Birmingham - coming soon!</a>
+              <a class="dropdown-item" href="preston">Preston - coming soon!</a>
+            </div>
           </div>
-
-    </div>
-    <div class="collapse navbar-collapse" id="navbar">
-      <ul class="nav navbar-nav mr-auto">
-        <li> <%= link_to "Locations", locations_path, class: "navbar-item navbar-link" %></li>
-        <li> <%= link_to "FAQ", faq_path, class: "navbar-item navbar-link" %></li>
-      </ul>
-    </div>
-  </div>
-
-<!-- Dropdown appearing on mobile only -->
-  <div class="navbar-item navbar-link d-lg-none d-xl-none">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-        <li> <a href="locations">Locations</a></li>
-        <li> <a href="faq">FAQ</a></li>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Locations", locations_path, class: "navbar-item-home navbar-link-home" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "FAQ", faq_path, class: "navbar-item-home navbar-link-home" %>
+        </li>
       </ul>
     </div>
   </div>

@@ -1,9 +1,72 @@
-<nav class="nav-home navbar-home navbar-expand navbar-dark transparent">
-  <a href="/" class="navbar-brand-home center"><%= image_tag "/images/transparent_closer.png", alt: "logo" %></a>
-    <div class="navbar-right">
-      <div class="btn-group dropdown">
-        <button type="btn" class="dropbtn dropdown-toggle dropdown-toggle-split" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Book<span class="sr-only">Toggle Dropdown</span></button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+<header>
+  <div class="overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="<%= 'background_video.mp4' %>" type="video/mp4">
+  </video>
+
+
+  <!-- Navigation -->
+  <nav class="navbar nav-primero navbar-expand-lg navbar-dark transparent static-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <%= image_tag "/images/transparent_closer.png", alt: "logo" %>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <div class="dropdown">
+            <button type="button" class="btn btn-primero dropdown-toggle" data-toggle="dropdown">
+              Book
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="sheffield">Sheffield</a>
+              <a class="dropdown-item" href="cardiff">Cardiff</a>
+              <a class="dropdown-item" href="basingstoke">Basingstoke</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="birmingham">Birmingham - coming soon!</a>
+              <a class="dropdown-item" href="preston">Preston - coming soon!</a>
+            </div>
+          </div>
+        </li>
+          <li class="nav-item">
+            <%= link_to "Locations", locations_path, class: "navbar-item-home navbar-link-home" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "FAQ", faq_path, class: "navbar-item-home navbar-link-home" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container h-100">
+    <div class="d-flex h-75 text-center align-items-center">
+
+      <div class="w-100 text-white hero-text">
+        <h1 class="display-1">Primero Apartments</h1>
+        <p class="lead mb-0">Quality serviced apartments in
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <h2>Sheffield</h2>
+              </div>
+              <div class="carousel-item">
+                <h2>Cardiff</h2>
+              </div>
+              <div class="carousel-item">
+                <h2>Basingstoke</h2>
+              </div>
+            </div>
+          </div>
+        </p>
+
+        <div class="dropdown">
+          <button type="button" class="btn btn-primero-secondary dropdown-toggle" data-toggle="dropdown">
+            Book now!
+          </button>
+          <div class="dropdown-menu">
             <a class="dropdown-item" href="sheffield">Sheffield</a>
             <a class="dropdown-item" href="cardiff">Cardiff</a>
             <a class="dropdown-item" href="basingstoke">Basingstoke</a>
@@ -12,78 +75,8 @@
             <a class="dropdown-item" href="preston">Preston - coming soon!</a>
           </div>
         </div>
-        <div class="collapse navbar-collapse" id="navbar">
-          <ul class="nav navbar-nav mr-auto">
-          <li> <%= link_to "Locations", locations_path, class: "navbar-item-home navbar-link-home" %></li>
-          <li> <%= link_to "FAQ", faq_path, class: "navbar-item-home navbar-link-home" %></li>
-          </ul>
-        </div>
       </div>
 
-<!-- Dropdown appearing on mobile only -->
-  <div class="navbar-item navbar-link d-lg-none d-xl-none">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-      <li> <a href="locations">Locations</a></li>
-      <li> <a href="faq">FAQ</a></li>
-      </ul>
     </div>
   </div>
-</nav>
-
-      <div class="banner">
-        <video autoplay muted loop id="myvid">
-            <source src="<%= 'background_video.mp4' %>" type="video/mp4">
-          </video>
-          <div class="banner-content">
-            <h1>Primero Apartments</h1>
-            <p>Quality Service Apartments in</p>
-
-            <!-- <div class="col-xs-12 col-sm-6">
-              <div class="homepage_card blue">
-                <h3>Text</h3>
-                <p class="explanation">Text</p>
-              </div>
-            </div> -->
-          <div>
-<!-- booking box -->
-            <label class="wrapper" for="states">Where would you like to go?>
-            <div class="button dropdown">
-              <select id="locationselector">
-                 <option value="red">Basingstoke</option>
-                 <option value="yellow">Cardiff</option>
-                 <option value="blue">Sheffield</option>
-              </select>
-            </div>
-
-            <div class="output">
-              <div id="red" class="locations red">
-                <%= render 'components/book_basingstoke' %></div>
-              <div id="yellow" class="locations yellow">
-                <%= render 'components/book_cardiff' %></div>
-              <div id="blue" class="locations blue">
-                <%= render 'components/book_sheffield' %></div>
-            </div>
-
-<!-- booking box end -->
-          </div>
-        </div>
-        <!-- <div class="banner-gradient"></div> -->
-      </div> <!-- banner -->
-      <div>
-        <br>
-        <br>
-          <h1>hi</h1>
-      </div>
-
-<!-- js for bookings -->
-<script>
-  $(function() {
-  $('#locationselector').change(function(){
-    $('.locations').hide();
-    $('#' + $(this).val()).show();
-  });
-});
-</script>
-
+</header>
