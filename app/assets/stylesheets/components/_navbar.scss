@@ -59,6 +59,12 @@ $white: #fff;
 }
 
 .navbar.nav-primero-page .logo {
+  width: 50%;
+
+  @media (min-width: 992px) {
+    width: 100%;
+  }
+
   a:hover {
     color: transparent;
   }
@@ -66,7 +72,10 @@ $white: #fff;
   img {
     margin-top: 0;
     margin-right: 2rem;
-    width: 15%;
+    width: 50%
   }
-}
 
+    @media (min-width: 992px) {
+      width: 100%;
+    }
+}
