@@ -1,4 +1,3 @@
-
 Rails.application.routes.draw do
   resources :apartments, only: [:new, :edit, :show, :create, :index, :update, :destroy]
 

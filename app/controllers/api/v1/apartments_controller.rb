@@ -15,10 +15,11 @@ class Api::V1::ApartmentsController < Api::V1::BaseController
 
     response = https.request(request)
     puts response.read_body
+
   end
 
-  def all
-    render json: Apartment.all
+  def sheffield
+    @apartments = Apartment.where(city: "sheffield")
   end
 
 end
