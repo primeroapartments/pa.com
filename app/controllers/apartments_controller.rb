@@ -1,3 +1,5 @@
+class TokeetApartment < Struct.new(:name);end
+
 class ApartmentsController < ApplicationController
   def locations
     @apartments = Apartment.geocoded #returns flats with coordinates
@@ -13,23 +15,11 @@ class ApartmentsController < ApplicationController
   end
 
   def sheffield
-    url = URI("https://capi.tokeet.com/v1/rental?account=1498576319.9833")
-
-    https = Net::HTTP.new(url.host, url.port)
-    https.use_ssl = true
-
-    request = Net::HTTP::Get.new(url)
-    request["Authorization"]=ENV['TOKEET_API']
-    request.body = "{}"
-
-    response = https.request(request)
-    puts response.read_body
-
-    @apartments = Apartment.where(location: "sheffield")
+    @apartments = Tokeet.new("Sheffield").rentals
   end
 
   def cardiff
-    @apartments = Apartment.where(location: "cardiff")
+    @apartments = Tokeet.new("Cardiff").rentals
   end
 
   def basingstoke

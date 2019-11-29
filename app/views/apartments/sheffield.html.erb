@@ -38,61 +38,11 @@
 </div>
 <hr class="style-two">
 
+<ul>
+
 <% @apartments.each do |apartment| %>
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <div id="aptcarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-        <ol class="carousel-indicators">
-          <li data-target="#aptcarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#aptcarousel" data-slide-to="1"></li>
-          <li data-target="#aptcarousel" data-slide-to="2"></li>
-          <li data-target="#aptcarousel" data-slide-to="3"></li>
-        </ol>
-
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="/images/sheffield/fitz4_1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/images/sheffield/fitz4_2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/images/sheffield/fitz4_3.jpg" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/images/sheffield/fitz4_4.jpg" alt="Fourth slide">
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <h3> <%= apartment.name %></h3>
-      <h6> <%= apartment.address %></h6>
-    <div class="w-100"></div>
-        <ul>• Sleeps up to <%= apartment.persons %> people</ul>
-        <ul>• TAG bedroom, <%= apartment.bathrooms %> bathroom apartment  </ul>
-        <ul>• <%= apartment.size %> sqm on the <%= apartment.floor %> floor</ul>
-<!--         <ul>• Elevator</ul> -->
-        <ul>• Modern interior, fully equiped kitchen</ul>
-        <ul>• Hotel quality bed linen and towels included</ul>
-        <ul>• Hair dryer</ul>
-        <ul>• Key-free access</ul>
-        <ul>• Fast Wifi</ul>
-    <div class="w-100"></div>
-        <p> <%= apartment.description %></p>
-    </div>
-    <div class="col">
-      <div>
-        <p>From: £<%= apartment.price %></p> per night
-      </div>
-      <div class="btndark">
-        <a href= <%= apartment.apartment_link %> target="_blank">Book</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr class="style-two">
+  <li><%= apartment.name %></li>
+  <li><%= apartment.description %></li>
 <% end %>
 
+</ul>
