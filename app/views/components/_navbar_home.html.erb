@@ -8,60 +8,60 @@
   <!-- Navigation -->
   <nav class="navbar nav-primero navbar-expand-lg navbar-dark transparent static-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <%= image_tag "/images/transparent_closer.png", alt: "logo" %>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <div class="dropdown">
-            <button type="button" class="btn btn-primero dropdown-toggle" data-toggle="dropdown">
-              Book
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="sheffield">Sheffield</a>
-              <a class="dropdown-item" href="cardiff">Cardiff</a>
-              <a class="dropdown-item" href="basingstoke">Basingstoke</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="birmingham">Birmingham - coming soon!</a>
-              <a class="dropdown-item" href="preston">Preston - coming soon!</a>
-            </div>
-          </div>
-        </li>
-          <li class="nav-item">
-            <%= link_to "Locations", locations_path, class: "navbar-item-home navbar-link-home" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "FAQ", faq_path, class: "navbar-item-home navbar-link-home" %>
-          </li>
-        </ul>
-      </div>
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
   </nav>
+
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <div class="dropdown">
+        <button type="button" class="btn btn-primero dropdown-toggle" data-toggle="dropdown">
+          Book
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="sheffield">Sheffield</a>
+          <a class="dropdown-item" href="cardiff">Cardiff</a>
+          <a class="dropdown-item" href="basingstoke">Basingstoke</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="birmingham">Birmingham - coming soon!</a>
+          <a class="dropdown-item" href="preston">Preston - coming soon!</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Locations", locations_path, class: "navbar-item-home navbar-link-home" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "FAQ", faq_path, class: "navbar-item-home navbar-link-home" %>
+    </li>
+  </ul>
+</div>
 
   <div class="container h-100">
     <div class="d-flex h-75 text-center align-items-center">
 
       <div class="w-100 text-white hero-text">
         <h1 class="display-1">Primero Apartments</h1>
-        <p class="lead mb-0">Quality serviced apartments in
-          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <h2>Sheffield</h2>
-              </div>
-              <div class="carousel-item">
-                <h2>Cardiff</h2>
-              </div>
-              <div class="carousel-item">
-                <h2>Basingstoke</h2>
-              </div>
-            </div>
+        <p class="lead mb-0">Quality serviced apartments in </p>
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2>Sheffield</h2>
+            </div>
+            <div class="carousel-item">
+              <h2>Cardiff</h2>
+            </div>
+            <div class="carousel-item">
+              <h2>Basingstoke</h2>
+            </div>
           </div>
-        </p>
-
+        </div>
+        
         <div class="dropdown">
           <button type="button" class="btn btn-primero-secondary dropdown-toggle" data-toggle="dropdown">
             Book now!

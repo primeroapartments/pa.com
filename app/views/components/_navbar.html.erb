@@ -3,38 +3,40 @@
   <div class="container-fluid">
 
     <div class="logo">
-      <a href="#">
+      <a href="/">
         <%= image_tag "high_res_round.png", alt: "logo" %>
       </a>
-      <span class="d-none d-md-inline-block">Primero Apartments</span>
+      <span class="d-none d-lg-inline-block">Primero Apartments</span>
     </div>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <div class="dropdown">
-            <button type="button" class="btn btn-primero dropdown-toggle" data-toggle="dropdown">
-              Book
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="sheffield">Sheffield</a>
-              <a class="dropdown-item" href="cardiff">Cardiff</a>
-              <a class="dropdown-item" href="basingstoke">Basingstoke</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="birmingham">Birmingham - coming soon!</a>
-              <a class="dropdown-item" href="preston">Preston - coming soon!</a>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Locations", locations_path, class: "navbar-item-home navbar-link-home" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "FAQ", faq_path, class: "navbar-item-home navbar-link-home" %>
-        </li>
-      </ul>
-    </div>
-  </div>
+      <span class="navbar-toggler-icon"></span>
+    </button>
 </nav>
+
+<div class="collapse navbar-collapse" id="navbarResponsive">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <div class="dropdown">
+        <button type="button" class="btn btn-primero dropdown-toggle" data-toggle="dropdown">
+          Book
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="sheffield">Sheffield</a>
+          <a class="dropdown-item" href="cardiff">Cardiff</a>
+          <a class="dropdown-item" href="basingstoke">Basingstoke</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="birmingham">Birmingham - coming soon!</a>
+          <a class="dropdown-item" href="preston">Preston - coming soon!</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Locations", locations_path, class: "navbar-item-home navbar-link-home" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "FAQ", faq_path, class: "navbar-item-home navbar-link-home" %>
+    </li>
+  </ul>
+</div>
+</div>

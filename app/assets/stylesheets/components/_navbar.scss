@@ -5,42 +5,60 @@ $white: #fff;
 /* Main navbar */
 .navbar.nav-primero {
   transition: all 0.3s ease;
-  height: 110px;
   display: flex;
+  height: 100px;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0px;
   z-index: 3;
+
+  @media (min-width: 992px) {
+    height: 110px;
+  }
 }
 
 /* Logo */
 .navbar.nav-primero .navbar-brand {
-  width: 30%;
+  width: 75px;
 
   @media (min-width: 992px) {
-    width: 100%;
+    margin-top: 7rem;
+    width: 200px;
   }
+}
 
-  img {
-    width: 100%;
-
-    @media (min-width: 992px) {
-      margin-top: 7rem;
-      width: 20%;
-    }
-  }
+.navbar-nav .nav-item + .nav-item {
+  margin-right: 0;  
 }
 
 /* Basic navbar item */
 .nav-item {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid white;
   cursor: pointer;
-  padding: 0 1.5rem;
+  padding: .375rem .75rem;
+  text-align: center;
+  z-index: 9999;
+
+  @media (min-width: 992px) {
+    background-color: transparent;
+    border-bottom: none;
+    padding: 0 1.5rem;
+    opacity: 1;
+  }  
+
+  &:first-child {
+    padding: 0;
+  }
 
   a {
     display: block;
     color: $white;
-    padding: 0.4rem 0 0;
+
+    @media (min-width: 992px) {
+      padding: 0.4rem 0 0;
+    }
 
     &:hover {
       color: $white;
@@ -59,12 +77,6 @@ $white: #fff;
 }
 
 .navbar.nav-primero-page .logo {
-  width: 50%;
-
-  @media (min-width: 992px) {
-    width: 100%;
-  }
-
   a:hover {
     color: transparent;
   }
@@ -72,10 +84,24 @@ $white: #fff;
   img {
     margin-top: 0;
     margin-right: 2rem;
-    width: 15%
-  }
+    width: 50px;
 
     @media (min-width: 992px) {
-      width: 100%;
+      width: 100px;
     }
+  }
 }
+
+// Nav Toggler - Hamburger btn
+button.navbar-toggler {
+  border: none;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
