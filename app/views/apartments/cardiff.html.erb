@@ -35,11 +35,82 @@
 
 <hr class="style-two">
 
+<% @apartments.each do |apartment| %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div id="aptcarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <ol class="carousel-indicators">
+          <li data-target="#aptcarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#aptcarousel" data-slide-to="1"></li>
+          <li data-target="#aptcarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="/images/sheffield/sheffield_1.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="/images/sheffield/sheffield_2.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="/images/sheffield/sheffield_3.jpg" alt="Third slide">
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <h3> <%= apartment.display_name %></h3>
+      <h6> <%= apartment.address %></h6>
+    <div class="w-100"></div>
+        <ul>• Sleeps up to <%= apartment.persons %> people</ul>
+        <ul>• Bathrooms: <%= apartment.bathrooms %></ul>
+        <ul>• Fully furnished</ul>
+        <ul>• Bedding and towels included</ul>
+        <ul>• Fast Wifi</ul>
+        <ul>• Balcony</ul>
+    <div class="w-100"></div>
+        <p> <%= apartment.description %></p>
+    </div>
+    <div class="col">
+      <div>
+        <p>From: £<%= apartment.price %></p>
+      </div>
+      <div class="btn">
+        <a href= <%= apartment.apartment_link %> target="_blank" class="dropbtn">Book</a>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="style-two">
+<% end %>
+
+
+<div class="text-center, margin-top">
+  <h2>Check out all apartments</h2>
+</div>
+<hr class="style-two">
+
 <ul>
 
 <% @apartments.each do |apartment| %>
-  <li><%= apartment.name %></li>
+  <li><%= apartment.display_name %></li>
+  <li>• Sleeps <%= apartment.sleep_max %></li>
+  <li>• <%= apartment.bathrooms %> bathroom(s)</li>
+  <li>• Modern interior, fully equiped kitchen</li>
+  <li>• Hotel quality towels and linen included</li>
+  <li>• Hairdryer</li>
+  <li>• Key free access</li>
+  <li>• Fast Wifi</li>
   <li><%= apartment.description %></li>
-<% end %>
 
+ <li> From <%= apartment.nightly %></li>
+
+ <a href="https://primerocardiff.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank"
+    class="btn btn-primero">Book</a>
+
+ <br>
+<hr class="style-two">
+<% end %>
 </ul>
+

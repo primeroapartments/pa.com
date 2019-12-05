@@ -10,11 +10,19 @@ class Tokeet
   end
 
   class Apartment
-    attr_reader :name, :description
+    attr_reader :display_name, :description, :bedrooms, :sleep_max, :bathrooms,
+      :baserate, :nightly, :pkey
 
-    def initialize(name, description)
-      @name = name
+    def initialize(display_name, description, bedrooms, sleep_max, bathrooms,
+      baserate, nightly, pkey)
+      @display_name = display_name
       @description = description
+      @bedrooms = bedrooms
+      @sleep_max = sleep_max
+      @bathrooms = bathrooms
+      @baserate = baserate
+      @nightly = baserate['nightly']
+      @pkey = pkey
     end
   end
 
@@ -53,7 +61,9 @@ class Tokeet
 
   def present(apartments)
     apartments.map do |apartment|
-      Apartment.new(apartment["name"],apartment["description"])
+      Apartment.new(apartment["display_name"],apartment["description"],
+        apartment["bedrooms"], apartment["sleep_max"], apartment["bathrooms"],
+        apartment["baserate"], apartment["nightly"], apartment["pkey"])
     end
   end
 end

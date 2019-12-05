@@ -23,7 +23,7 @@ class ApartmentsController < ApplicationController
   end
 
   def basingstoke
-    @apartments = Apartment.where(location: "basingstoke")
+    @apartments = Tokeet.new("Basingstoke").rentals
   end
 
   def index

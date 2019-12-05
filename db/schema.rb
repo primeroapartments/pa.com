@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2019_09_25_121251) do
   enable_extension "plpgsql"
 
   create_table "apartments", force: :cascade do |t|
-    t.string "name"
+    t.string "display_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
     t.string "address"
-    t.integer "persons"
+    t.integer "sleep_max" #max number of people in apt
     t.integer "bathrooms"
     t.text "description"
     t.string "apartment_link"

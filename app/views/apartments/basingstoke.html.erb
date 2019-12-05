@@ -20,3 +20,33 @@
     </script>
   <div id="widget"></div>
 </div>
+
+
+<hr class="style-one">
+<div class="text-center, margin-top">
+  <h2>Check out all apartments</h2>
+</div>
+<hr class="style-two">
+
+<ul>
+
+<% @apartments.each do |apartment| %>
+  <li><%= apartment.display_name %></li>
+  <li>• Sleeps <%= apartment.sleep_max %></li>
+  <li>• <%= apartment.bathrooms %> bathroom(s)</li>
+  <li>• Modern interior, fully equiped kitchen</li>
+  <li>• Hotel quality towels and linen included</li>
+  <li>• Hairdryer</li>
+  <li>• Key free access</li>
+  <li>• Fast Wifi</li>
+  <li><%= apartment.description %></li>
+
+ <li> From <%= apartment.nightly %></li>
+
+ <a href="https://primerobasingstoke.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank"
+    class="btn btn-primero">Book</a>
+
+ <br>
+<hr class="style-two">
+<% end %>
+</ul>
