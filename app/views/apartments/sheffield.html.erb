@@ -29,7 +29,6 @@
 <br><br><br><br>
 <hr class="style-one">
 
-<!-- apartment 4 -->
 
 <br>
 
@@ -38,51 +37,52 @@
 </div>
 <hr class="style-two">
 
-<% @apartments.each do |apartment| %>
-<%= apartment.pkey %> <br>
-<% end %>
+<div class="container">
 
+  <% @apartments.each do |apartment| %>
+  <div class="row">
+    <div class="col-5">
+      <% if apartment.pkey == "6cf30a63-ed0f-432b-b8cc-497b87fa5a8c" %>
+        <%= render 'components/apt_4_shef' %>
+      <% elsif apartment.pkey == "f6cabb58-5e0e-47ce-aa1b-76ad7b79eb62" %>
+        <%= render 'components/apt_6_shef' %>
+      <% elsif apartment.pkey == "fceec19c-b6d9-4b76-85d3-cafa76b8ef43" %>
+        <%= render 'components/apt_8_shef' %>
+      <% elsif apartment.pkey == "66ca085d-d399-4d44-9748-256e0d460e6d" %>
+        <%= render 'components/apt_10_shef' %>
+      <% elsif apartment.pkey == "1be0c544-b128-49ce-98e0-d25b6c7d2d41" %>
+        <%= render 'components/apt_26_shef' %>
+      <% elsif apartment.pkey == "f6cabb58-5e0e-47ce-aa1b-76ad7b79eb62" %>
+        <%= render 'components/apt_30_shef' %>
+      <% elsif apartment.pkey == "e9e01182-be3f-4cf4-9224-407953bbd0d4" %>
+        <%= render 'components/apt_39_shef' %>
+      <% elsif apartment.pkey == "7a748414-b56b-44f6-af59-f6ff37899f01" %>
+        <%= render 'components/apt_43_shef' %>
+      <% else %>
+        <%= "" %>
+      <% end %>
+    </div>
+  <div class="col-5">
 <ul>
-
-<% @apartments.each do |apartment| %>
-  <li><%= apartment.display_name %></li>
-  <li>• Sleeps <%= apartment.sleep_max %></li>
-  <li>• <%= apartment.bathrooms %> bathroom(s)</li>
-  <li>• Modern interior, fully equiped kitchen</li>
-  <li>• Hotel quality towels and linen included</li>
-  <li>• Hairdryer</li>
-  <li>• Key free access</li>
-  <li>• Fast Wifi</li>
-  <li><%= apartment.description %></li>
-
-  <li> From <%= apartment.nightly %></li>
-  <a href="https://primero.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank"
-     class="btn btn-primero">Book</a>
-  <li><%= apartment.pkey %></li>
-
-    <% if apartment.pkey == "6cf30a63-ed0f-432b-b8cc-497b87fa5a8c" %>
-      <%= render 'components/apt_4_shef' %>
-    <% elsif apartment.pkey == "f6cabb58-5e0e-47ce-aa1b-76ad7b79eb62" %>
-      <%= render 'components/apt_6_shef' %>
-    <% elsif apartment.pkey == "fceec19c-b6d9-4b76-85d3-cafa76b8ef43" %>
-      <%= render 'components/apt_8_shef' %>
-    <% elsif apartment.pkey == "66ca085d-d399-4d44-9748-256e0d460e6d" %>
-      <%= render 'components/apt_10_shef' %>
-    <% elsif apartment.pkey == "1be0c544-b128-49ce-98e0-d25b6c7d2d41" %>
-      <%= render 'components/apt_26_shef' %>
-    <% elsif apartment.pkey == "f6cabb58-5e0e-47ce-aa1b-76ad7b79eb62" %>
-      <%= render 'components/apt_30_shef' %>
-    <% elsif apartment.pkey == "e9e01182-be3f-4cf4-9224-407953bbd0d4" %>
-      <%= render 'components/apt_39_shef' %>
-    <% elsif apartment.pkey == "7a748414-b56b-44f6-af59-f6ff37899f01" %>
-      <%= render 'components/apt_43_shef' %>
-    <% else %>
-      <%= "" %>
-    <% end %>
-
-
-
-
-  <hr class="style-two">
-<% end %>
+    <ul><%= apartment.display_name %></ul>
+    <ul>• Sleeps <%= apartment.sleep_max %></ul>
+    <ul>• <%= apartment.bathrooms %> bathroom(s)</ul>
+    <ul>• Modern interior, fully equiped kitchen</ul>
+    <ul>• Hotel quality towels and linen included</ul>
+    <ul>• Hairdryer</ul>
+    <ul>• Key free access</ul>
+    <ul>• Fast Wifi</ul>
+    <ul><%= apartment.description %></ul>
+  </div>
+  <div class="col-2">
+    <ul> From £<%= apartment.nightly %></ul>
 </ul>
+
+    <a href="https://primero.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank"
+     class="btn btn-primero">Book</a>
+  </div>
+  </div>
+
+    <hr class="style-two">
+  <% end %>
+</div>

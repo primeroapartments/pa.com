@@ -1,6 +1,9 @@
-<h2>Book you Basingstoke apartment</h2>
+<div class="text-center, margin-top">
+  <h2>Book your Basingstoke apartment</h2>
+</div>
 
-<div class="btn">
+<br>
+<div class="btn, text-center, margin-top">
   <script src="https://s3.amazonaws.com/widgets.tokeet.com/widgets/interstitial/interstitial-widget.js?1554438722"></script>
     <script>
       window.tokeetIWSettings = {
@@ -19,6 +22,7 @@
       };
     </script>
   <div id="widget"></div>
+  <br><br><br><br>
 </div>
 
 
@@ -28,45 +32,39 @@
   <h2>Check out all apartments</h2>
 </div>
 <hr class="style-two">
-<hr class="style-one">
-<% @apartments.each do |apartment| %>
-<%= apartment.pkey %> <br>
-<% end %>
 
-
-<ul>
-
-<% @apartments.each do |apartment| %>
-  <li><%= apartment.display_name %></li>
-  <li>• Sleeps <%= apartment.sleep_max %></li>
-  <li>• <%= apartment.bathrooms %> bathroom(s)</li>
-  <li>• Modern interior, fully equiped kitchen</li>
-  <li>• Hotel quality towels and linen included</li>
-  <li>• Hairdryer</li>
-  <li>• Key free access</li>
-  <li>• Fast Wifi</li>
-  <li><%= apartment.description %></li>
-
- <li> From <%= apartment.nightly %></li>
-
- <a href="https://primerobasingstoke.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank"
-    class="btn btn-primero">Book</a>
-  <li><%= apartment.pkey %></li>
-
-    <% if apartment.pkey == "7ace7df2-0506-400e-85dd-abab9dc4b79a" %>
-      <%= render 'components/apt_18_bas' %>
-    <% elsif apartment.pkey == "2c76ed6c-998a-4447-ba14-78a0d958a14f" %>
-      <%= render 'components/apt_20_bas' %>
-    <% elsif apartment.pkey == "8035e1bc-3baf-43a9-9292-7314556748b9" %>
-      <%= render 'components/apt_2_bas' %>
-
-    <% else %>
-      <%= "" %>
-    <% end %>
-
-
-
-
-  <hr class="style-two">
-<% end %>
-</ul>
+<div class="container">
+  <% @apartments.each do |apartment| %>
+    <div class="row">
+    <div class="col-5">
+      <% if apartment.pkey == "7ace7df2-0506-400e-85dd-abab9dc4b79a" %>
+        <%= render 'components/apt_18_bas' %>
+      <% elsif apartment.pkey == "2c76ed6c-998a-4447-ba14-78a0d958a14f" %>
+        <%= render 'components/apt_20_bas' %>
+      <% elsif apartment.pkey == "8035e1bc-3baf-43a9-9292-7314556748b9" %>
+        <%= render 'components/apt_2_bas' %>
+      <% else %>
+        <%= "" %>
+      <% end %>
+    </div>
+  <div class="col-5">
+  <ul>
+    <ul><%= apartment.display_name %></ul>
+    <ul>• Sleeps <%= apartment.sleep_max %></ul>
+    <ul>• <%= apartment.bathrooms %> bathroom(s)</ul>
+    <ul>• Modern interior, fully equiped kitchen</ul>
+    <ul>• Hotel quality towels and linen included</ul>
+    <ul>• Hairdryer</ul>
+    <ul>• Key free access</ul>
+    <ul>• Fast Wifi</ul>
+    <br>
+    <ul><%= apartment.description %></ul>
+  </div>
+  <div class="col-2">
+    <ul> From £<%= apartment.nightly %></ul>
+    </ul>
+    <a href="https://primerobasingstoke.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank" class="btn btn-primero">Book</a>
+  </div>
+  </div>
+    <hr class="style-two">
+  <% end %>

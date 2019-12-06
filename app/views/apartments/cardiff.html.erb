@@ -1,6 +1,9 @@
-<h1>Book your Cardiff apartment</h1>
+<div class="text-center, margin-top">
+  <h2>Book your Cardiff apartment</h2>
+</div>
 
-<div class="btn">
+<br>
+<div class="btn, text-center, margin-top">
   <script src="https://s3.amazonaws.com/widgets.tokeet.com/widgets/interstitial/interstitial-widget.js?1554438722"></script>
     <script>
     window.tokeetIWSettings = {
@@ -20,118 +23,57 @@
     </script>
   <div id="widget"></div>
 </div>
-
-<div class="text-center, margin-top">
-  <h2>Book your Cardiff apartment</h2>
-</div>
+<br><br><br><br>
 
 <hr class="style-one">
-<% @apartments.each do |apartment| %>
-<%= apartment.pkey %> <br>
-<% end %>
-
-<!-- apartment 4 -->
-
-
-
-<br>
-
-<hr class="style-two">
-
-<% @apartments.each do |apartment| %>
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <div id="aptcarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-        <ol class="carousel-indicators">
-          <li data-target="#aptcarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#aptcarousel" data-slide-to="1"></li>
-          <li data-target="#aptcarousel" data-slide-to="2"></li>
-        </ol>
-
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="/images/sheffield/sheffield_1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/images/sheffield/sheffield_2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="/images/sheffield/sheffield_3.jpg" alt="Third slide">
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <h3> <%= apartment.display_name %></h3>
-    <div class="w-100"></div>
-        <ul>• Sleeps up to people</ul>
-        <ul>• Bathrooms: %></ul>
-        <ul>• Fully furnished</ul>
-        <ul>• Bedding and towels included</ul>
-        <ul>• Fast Wifi</ul>
-        <ul>• Balcony</ul>
-    <div class="w-100"></div>
-        <p> <%= apartment.description %></p>
-    </div>
-    <div class="col">
-      <div>
-        <p>From: £</p>
-      </div>
-      <div class="btn">
-        <a href=  target="_blank" class="dropbtn">Book</a>
-      </div>
-    </div>
-  </div>
-</div>
-<hr class="style-two">
-<% end %>
-
 
 <div class="text-center, margin-top">
   <h2>Check out all apartments</h2>
 </div>
 <hr class="style-two">
-
-<ul>
-
+<div class="container">
 <% @apartments.each do |apartment| %>
-  <li><%= apartment.display_name %></li>
-  <li>• Sleeps <%= apartment.sleep_max %></li>
-  <li>• <%= apartment.bathrooms %> bathroom(s)</li>
-  <li>• Modern interior, fully equiped kitchen</li>
-  <li>• Hotel quality towels and linen included</li>
-  <li>• Hairdryer</li>
-  <li>• Key free access</li>
-  <li>• Fast Wifi</li>
-  <li><%= apartment.description %></li>
-
- <li> From <%= apartment.nightly %></li>
+<div class="row">
+  <div class="col-5">
+      <% if apartment.pkey == "2dcabefc-8f0a-4e35-abef-2d4d6258b920" %>
+        <%= render 'components/apt_19_car' %>
+      <% elsif apartment.pkey == "884333ec-edc9-4f46-927e-ad539de3f18a" %>
+        <%= render 'components/apt_20_car' %>
+      <% elsif apartment.pkey == "2800c9ab-fc95-4000-a32c-659f71df97f3" %>
+        <%= render 'components/apt_23_car' %>
+      <% elsif apartment.pkey == "61620078-983f-45d4-a9b5-11c2dc5510cd" %>
+        <%= render 'components/apt_29_car' %>
+      <% elsif apartment.pkey == "7551b7b3-febe-4972-ba5a-d92c94e04f3d" %>
+        <%= render 'components/apt_31_car' %>
+      <% elsif apartment.pkey == "f219c56c-4fd6-4e45-97c7-71d17bb7f30b" %>
+        <%= render 'components/apt_34_car' %>
+      <% elsif apartment.pkey == "719199ff-e436-45d3-823b-0f35f28df6de" %>
+        <%= render 'components/apt_47_car' %>
+      <% elsif apartment.pkey == "54a3375b-500b-4a35-b483-3011171f9107" %>
+        <%= render 'components/apt_89_car' %>
+      <% else %>
+        <%= "" %>
+      <% end %>
+  </div>
+  <div class="col-5">
+<ul>
+  <ul><%= apartment.display_name %></ul>
+  <ul>• Sleeps <%= apartment.sleep_max %></ul>
+  <ul>• <%= apartment.bathrooms %> bathroom(s)</ul>
+  <ul>• Modern interior, fully equiped kitchen</ul>
+  <ul>• Hotel quality towels and linen included</ul>
+  <ul>• Hairdryer</ul>
+  <ul>• Key free access</ul>
+  <ul>• Fast Wifi</ul>
+  <ul><%= apartment.description %></ul>
+  </div>
+  <div class="col-2">
+ <ul> From £<%= apartment.nightly %></ul>
 
  <a href="https://primerocardiff.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank"
     class="btn btn-primero">Book</a>
-
-    <li><%= apartment.pkey %></li>
-
-      <% if apartment.pkey == "2dcabefc-8f0a-4e35-abef-2d4d6258b920" %>
-        <%= render 'components/apt_19_car' %> 19 brick
-      <% elsif apartment.pkey == "884333ec-edc9-4f46-927e-ad539de3f18a" %>
-        <%= render 'components/apt_20_car' %> 20 brck
-      <% elsif apartment.pkey == "2800c9ab-fc95-4000-a32c-659f71df97f3" %>
-        <%= render 'components/apt_23_car' %> 23 brick
-      <% elsif apartment.pkey == "61620078-983f-45d4-a9b5-11c2dc5510cd" %>
-        <%= render 'components/apt_29_car' %> 29 brick
-      <% elsif apartment.pkey == "7551b7b3-febe-4972-ba5a-d92c94e04f3d" %>
-        <%= render 'components/apt_31_car' %> 31 brick
-      <% elsif apartment.pkey == "f219c56c-4fd6-4e45-97c7-71d17bb7f30b" %>
-        <%= render 'components/apt_34_car' %> 34 brick
-      <% elsif apartment.pkey == "719199ff-e436-45d3-823b-0f35f28df6de" %>
-        <%= render 'components/apt_47_car' %> 47 brick
-      <% elsif apartment.pkey == "54a3375b-500b-4a35-b483-3011171f9107" %>
-        <%= render 'components/apt_89_car' %> 89 brick
-      <% else %>
-        <%= "empty" %>
-      <% end %>
+ </div>
+  </div>
 
 
  <br>
