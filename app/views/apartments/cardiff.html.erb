@@ -26,6 +26,9 @@
 </div>
 
 <hr class="style-one">
+<% @apartments.each do |apartment| %>
+<%= apartment.pkey %> <br>
+<% end %>
 
 <!-- apartment 4 -->
 
@@ -61,10 +64,9 @@
     </div>
     <div class="col-4">
       <h3> <%= apartment.display_name %></h3>
-      <h6> <%= apartment.address %></h6>
     <div class="w-100"></div>
-        <ul>• Sleeps up to <%= apartment.persons %> people</ul>
-        <ul>• Bathrooms: <%= apartment.bathrooms %></ul>
+        <ul>• Sleeps up to people</ul>
+        <ul>• Bathrooms: %></ul>
         <ul>• Fully furnished</ul>
         <ul>• Bedding and towels included</ul>
         <ul>• Fast Wifi</ul>
@@ -74,10 +76,10 @@
     </div>
     <div class="col">
       <div>
-        <p>From: £<%= apartment.price %></p>
+        <p>From: £</p>
       </div>
       <div class="btn">
-        <a href= <%= apartment.apartment_link %> target="_blank" class="dropbtn">Book</a>
+        <a href=  target="_blank" class="dropbtn">Book</a>
       </div>
     </div>
   </div>
@@ -108,6 +110,29 @@
 
  <a href="https://primerocardiff.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank"
     class="btn btn-primero">Book</a>
+
+    <li><%= apartment.pkey %></li>
+
+      <% if apartment.pkey == "2dcabefc-8f0a-4e35-abef-2d4d6258b920" %>
+        <%= render 'components/apt_19_car' %> 19 brick
+      <% elsif apartment.pkey == "884333ec-edc9-4f46-927e-ad539de3f18a" %>
+        <%= render 'components/apt_20_car' %> 20 brck
+      <% elsif apartment.pkey == "2800c9ab-fc95-4000-a32c-659f71df97f3" %>
+        <%= render 'components/apt_23_car' %> 23 brick
+      <% elsif apartment.pkey == "61620078-983f-45d4-a9b5-11c2dc5510cd" %>
+        <%= render 'components/apt_29_car' %> 29 brick
+      <% elsif apartment.pkey == "7551b7b3-febe-4972-ba5a-d92c94e04f3d" %>
+        <%= render 'components/apt_31_car' %> 31 brick
+      <% elsif apartment.pkey == "f219c56c-4fd6-4e45-97c7-71d17bb7f30b" %>
+        <%= render 'components/apt_34_car' %> 34 brick
+      <% elsif apartment.pkey == "719199ff-e436-45d3-823b-0f35f28df6de" %>
+        <%= render 'components/apt_47_car' %> 47 brick
+      <% elsif apartment.pkey == "54a3375b-500b-4a35-b483-3011171f9107" %>
+        <%= render 'components/apt_89_car' %> 89 brick
+      <% else %>
+        <%= "empty" %>
+      <% end %>
+
 
  <br>
 <hr class="style-two">

@@ -38,6 +38,10 @@
 </div>
 <hr class="style-two">
 
+<% @apartments.each do |apartment| %>
+<%= apartment.pkey %> <br>
+<% end %>
+
 <ul>
 
 <% @apartments.each do |apartment| %>
@@ -51,7 +55,9 @@
   <li>• Fast Wifi</li>
   <li><%= apartment.description %></li>
 
- <li> From <%= apartment.nightly %></li>
+  <li> From <%= apartment.nightly %></li>
+  <a href="https://primero.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank"
+     class="btn btn-primero">Book</a>
   <li><%= apartment.pkey %></li>
 
     <% if apartment.pkey == "6cf30a63-ed0f-432b-b8cc-497b87fa5a8c" %>
@@ -71,7 +77,7 @@
     <% elsif apartment.pkey == "7a748414-b56b-44f6-af59-f6ff37899f01" %>
       <%= render 'components/apt_43_shef' %>
     <% else %>
-      <%= "empty" %>
+      <%= "" %>
     <% end %>
 
 
