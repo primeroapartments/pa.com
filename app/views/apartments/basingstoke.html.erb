@@ -36,35 +36,37 @@
 <div class="container">
   <% @apartments.each do |apartment| %>
     <div class="row">
-    <div class="col-5">
-      <% if apartment.pkey == "7ace7df2-0506-400e-85dd-abab9dc4b79a" %>
-        <%= render 'components/apt_18_bas' %>
-      <% elsif apartment.pkey == "2c76ed6c-998a-4447-ba14-78a0d958a14f" %>
-        <%= render 'components/apt_20_bas' %>
-      <% elsif apartment.pkey == "8035e1bc-3baf-43a9-9292-7314556748b9" %>
-        <%= render 'components/apt_2_bas' %>
-      <% else %>
-        <%= "" %>
-      <% end %>
+      <div class="col-md-6">
+        <% if apartment.pkey == "7ace7df2-0506-400e-85dd-abab9dc4b79a" %>
+          <%= render 'components/apt_18_bas' %>
+        <% elsif apartment.pkey == "2c76ed6c-998a-4447-ba14-78a0d958a14f" %>
+          <%= render 'components/apt_20_bas' %>
+        <% elsif apartment.pkey == "8035e1bc-3baf-43a9-9292-7314556748b9" %>
+          <%= render 'components/apt_2_bas' %>
+        <% else %>
+          <%= "" %>
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <ul>
+        <ul><%= apartment.display_name %></ul>
+        <ul>• Sleeps <%= apartment.sleep_max %></ul>
+        <ul>• <%= apartment.bathrooms %> bathroom(s)</ul>
+        <ul>• Modern interior, fully equiped kitchen</ul>
+        <ul>• Hotel quality towels and linen included</ul>
+        <ul>• Hairdryer</ul>
+        <ul>• Key free access</ul>
+        <ul>• Fast Wifi</ul>
+        <br>
+        <ul><%= apartment.description %></ul>
+        <br>
+      </div>
+      <div class="col-md-2 text-center">
+        <ul class="text-center"> From £<%= apartment.nightly %></ul>
+          <a href="https://primerobasingstoke.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank" class="btn btn-primero">Book</a>
+        </ul>
+      </div>
     </div>
-  <div class="col-5">
-  <ul>
-    <ul><%= apartment.display_name %></ul>
-    <ul>• Sleeps <%= apartment.sleep_max %></ul>
-    <ul>• <%= apartment.bathrooms %> bathroom(s)</ul>
-    <ul>• Modern interior, fully equiped kitchen</ul>
-    <ul>• Hotel quality towels and linen included</ul>
-    <ul>• Hairdryer</ul>
-    <ul>• Key free access</ul>
-    <ul>• Fast Wifi</ul>
-    <br>
-    <ul><%= apartment.description %></ul>
-  </div>
-  <div class="col-2">
-    <ul> From £<%= apartment.nightly %></ul>
-    </ul>
-    <a href="https://primerobasingstoke.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank" class="btn btn-primero">Book</a>
-  </div>
-  </div>
-    <hr class="style-two">
+  <hr class="style-two">
   <% end %>
+</div>
