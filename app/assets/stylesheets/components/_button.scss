@@ -19,6 +19,26 @@ $grey: #0c3268;
   }
 }
 
+// Mobile styles
+.btn.btn-booking {
+  margin-right: 0.25rem;
+
+  @media (max-width: 767px) {
+    display: table;
+    float: unset;
+    margin: 0 auto !important;
+  }
+}
+
+.btn.btn-primero.dropdown-toggle {
+  display: block;
+  width: 100%;
+
+  @media (min-width: 992px) {
+    width: unset;
+  }
+}
+
 .btn.btn-primero-secondary {
   background-color: $grey;
   border-color: $grey;

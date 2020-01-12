@@ -5,13 +5,17 @@ $white: #fff;
 /* Main navbar */
 .navbar.nav-primero {
   transition: all 0.3s ease;
-  height: 110px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0px;
   z-index: 3;
+
+  @media (min-width: 992px) {
+    height: 110px;
+  }
 }
 
 /* Logo */
@@ -25,9 +29,17 @@ $white: #fff;
   img {
     width: 100%;
 
+    @media (min-width: 768px) {
+      width: 50%
+    }
+
     @media (min-width: 992px) {
       margin-top: 7rem;
       width: 20%;
+    }
+
+    @media (min-width: 2560px) {
+      margin-top: 22rem
     }
   }
 }
@@ -41,11 +53,27 @@ $white: #fff;
     display: block;
     color: $white;
     padding: 0.4rem 0 0;
-    float: right;
+
+    @media (min-width: 992px) {
+      float: right;
+    }
 
     &:hover {
       color: $white;
     }
+  }
+}
+
+// Mobile styles
+.navbar-nav {
+  width: 50%;
+
+  @media (max-width: 767px) {
+    width: unset;
+  }
+
+  @media (min-width: 992px) {
+    width: unset;
   }
 }
 
@@ -60,7 +88,7 @@ $white: #fff;
 }
 
 .navbar.nav-primero-page .logo {
-  width: 50%;
+  width: 50%;
 
   @media (min-width: 992px) {
     width: 100%;
@@ -73,10 +101,10 @@ $white: #fff;
   img {
     margin-top: 0;
     margin-right: 2rem;
-    width: 15%
-  }
+    width: 15%;
 
-    @media (min-width: 992px) {
-      width: 100%;
+    @media (max-width: 767px) {
+      width: 50px;
     }
+  }
 }

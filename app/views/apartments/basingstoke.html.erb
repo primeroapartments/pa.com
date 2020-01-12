@@ -1,9 +1,8 @@
-<div class="text-center, margin-top">
+<div class="text-center margin-top">
   <h2>Book your Basingstoke apartment</h2>
 </div>
 
-<br>
-<div class="btn, text-center, margin-top">
+<div class="text-center margin-top mb-10">
   <script src="https://s3.amazonaws.com/widgets.tokeet.com/widgets/interstitial/interstitial-widget.js?1554438722"></script>
     <script>
       window.tokeetIWSettings = {
@@ -22,13 +21,11 @@
       };
     </script>
   <div id="widget"></div>
-  <br><br><br><br>
 </div>
 
 
-<hr class="style-one">
-<br>
-<div class="text-center, margin-top">
+<hr class="style-one mb-2">
+<div class="text-center margin-top">
   <h2>Check out all apartments</h2>
 </div>
 <hr class="style-two">
@@ -47,24 +44,23 @@
           <%= "" %>
         <% end %>
       </div>
-      <div class="col-md-4">
-        <ul>
-        <ul><%= apartment.display_name %></ul>
-        <ul>• Sleeps <%= apartment.sleep_max %></ul>
-        <ul>• <%= apartment.bathrooms %> bathroom(s)</ul>
-        <ul>• Modern interior, fully equiped kitchen</ul>
-        <ul>• Hotel quality towels and linen included</ul>
-        <ul>• Hairdryer</ul>
-        <ul>• Key free access</ul>
-        <ul>• Fast Wifi</ul>
-        <br>
-        <ul><%= apartment.description %></ul>
-        <br>
-      </div>
-      <div class="col-md-2 text-center">
-        <ul class="text-center"> From £<%= apartment.nightly %></ul>
-          <a href="https://primerobasingstoke.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank" class="btn btn-primero">Book</a>
+      <div class="col-xs-12 col-md-4">
+        <p><%= apartment.display_name %></p>
+        <ul class="mb-4 pl-4">
+          <li>Sleeps <%= apartment.sleep_max %></li>
+          <li><%= apartment.bathrooms %> bathroom(s)</li>
+          <li>Modern interior, fully equiped kitchen</li>
+          <li>Hotel quality towels and linen included</li>
+          <li>Hairdryer</li>
+          <li>Key free access</li>
+          <li>Fast Wifi</li>
         </ul>
+        <p><%= apartment.description %></p>
+      </div>
+      <div class="col-md-2">
+        <a href="https://primerobasingstoke.securelettings.net/checkout?rental_id=<%= apartment.pkey %>&start=[booking_start_date]&end=[booking_end_date]" target="_blank" class="btn btn-primero btn-booking">Book</a>
+        <div class="clearfix"></div>
+        <p class="text-center text-md-right mt-2">From £<%= apartment.nightly %></p>
       </div>
     </div>
   <hr class="style-two">

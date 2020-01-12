@@ -3,7 +3,19 @@
   margin-right: 10vh;
 }
 
- .margin-top {
+.margin-top {
   margin-top: 5vh;
   text-align: center;
+}
+
+.mb-10 {
+  margin-bottom: 6rem;
+}
+
+// mobile styles carousel
+
+.carousel-inner {
+  @media (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
 }
