@@ -29,8 +29,6 @@
 </div>
 <hr class="style-two">
 
-<hr class="style-two">
-
 <div class="container">
   <% @apartments.each do |apartment| %>
     <div class="row">
@@ -66,7 +64,7 @@
           <li>Key free access</li>
           <li>Fast Wifi</li>
         </ul>
-        <p><%= apartment.description %></p>
+        <p align="justify"><%= apartment.description %></p>
       </div>
 
       <div class="col-md-2">
