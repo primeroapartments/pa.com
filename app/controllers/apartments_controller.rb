@@ -26,48 +26,6 @@ class ApartmentsController < ApplicationController
     @apartments = Tokeet.new("Basingstoke").rentals
   end
 
-  def index
-    @apartments = Apartment.all
-  end
-
-  def show
-    @apartments = Apartment.where(params[:location])
-  end
-
-  def new
-    @apartment = Apartment.new
-  end
-
-  def create
-    @apartment = Apartment.new(apartment_params)
-    @apartment.save
-    redirect_to apartments_path
-    # if @apartment.location == sheffield
-    #   @apartment.save_to sheffield_path
-    # elsif @apartment.location == cardiff
-    #   save to cardiff_path
-    # else
-    #   @apartment.save_to basingstoke_path
-    # end
-    # end
-  end
-
-  def edit
-    @apartment = Apartment.find(params[:id])
-  end
-
-  def update
-    @apartment = Apartment.find(params[:id])
-    @apartment.update!(apartment_params)
-    redirect_to apartments_path
-  end
-
-  def destroy
-    @apartment = Apartment.find(params[:id])
-    @apartment.destroy
-    redirect_to apartments_path
-  end
-
   private
   def apartment_params
     params.require(:apartment).permit(:name, :address, :persons,
