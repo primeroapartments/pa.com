@@ -62,6 +62,20 @@ $white: #fff;
       color: $white;
     }
   }
+
+  a.dropdown {
+    display: block;
+    color: $black;
+    padding: 0.4rem 0 0;
+
+    @media (min-width: 992px) {
+      float: right;
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
 }
 
 // Mobile styles
