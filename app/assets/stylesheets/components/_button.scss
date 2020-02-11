@@ -19,6 +19,21 @@ $grey: #0c3268;
   }
 }
 
+.btn.btn-primero2 {
+  background-color: $white;
+  border-color: $white;
+  box-shadow: none;
+  color: $green;
+  float: right;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none;
+    color: $green;
+  }
+}
+
 // Mobile styles
 .btn.btn-booking {
   margin-right: 0.25rem;
