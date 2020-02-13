@@ -1,51 +1,51 @@
-<div class="container-fluid">
+<div class="container-flex">
   <div class="row">
-  <div class="col-xs-12 col-md-6">
-    <br>
-          <div class="card-product">
-            <%= image_tag "sheffield.jpg", alt: "Sheffield" %>
-            <div class="card-product-infos">
-              <h2>Sheffield</h2>
-                <p>Click <a href="sheffield">here</a> to see our <strong>apartments</strong> in Sheffield.</p>
-            </div>
-          </div>
-    <br>
-        <div class="card-product">
-          <%= image_tag "cardiff.jpg", alt: "Cardiff" %>
-            <div class="card-product-infos">
-              <h2>Cardiff</h2>
-                <p>Click <a href="cardiff">here</a> to see our <strong>apartments</strong> in Cardiff.</p>
-            </div>
-          </div>
-    <br>
-        <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-            <div class="card-product-infos">
-              <h2>Basingstoke</h2>
-                <p>Click <a href="basingstoke">here</a> to see our <strong>apartments</strong> in Basingstoke.</p>
-            </div>
-          </div>
-    <br>
-        <div class="card-product">
-          <%= image_tag "birmingham.jpg", alt: "Birmingham" %>
-            <div class="card-product-infos">
-              <h2>Birmingham</h2>
-                <p><strong>Coming soon!</strong></p>
-            </div>
+    <div class="col-md">
+      <br>
+      <div class="card-product">
+        <%= image_tag "sheffield.jpg", alt: "Sheffield" %>
+        <div class="card-product-infos">
+          <h2>Sheffield</h2>
+            <p>Click <a href="sheffield">here</a> to see our <strong>apartments</strong> in Sheffield.</p>
         </div>
+      </div>
     <br>
-  </div>
-
-  <div class="col-xs-12 col-md-6">
+      <div class="card-product">
+        <%= image_tag "cardiff.jpg", alt: "Cardiff" %>
+        <div class="card-product-infos">
+          <h2>Cardiff</h2>
+            <p>Click <a href="cardiff">here</a> to see our <strong>apartments</strong> in Cardiff.</p>
+        </div>
+      </div>
     <br>
-    <div id="map" style="width: 100%; height: 95%;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+        <div class="card-product-infos">
+          <h2>Basingstoke</h2>
+            <p>Click <a href="basingstoke">here</a> to see our <strong>apartments</strong> in Basingstoke.</p>
+        </div>
+      </div>
+    <br>
+      <div class="card-product">
+        <%= image_tag "birmingham.jpg", alt: "Birmingham" %>
+        <div class="card-product-infos">
+          <h2>Birmingham</h2>
+            <p><strong>Coming soon!</strong></p>
+        </div>
+      </div>
+    <br>
     </div>
+
+    <div class="col-md">
+      <br>
+      <div id="map" style="width: 100%; height: 95%;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        <%= content_for(:after_js) do %>
+          <%= javascript_pack_tag 'map' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
-<%= content_for(:after_js) do %>
-  <%= javascript_pack_tag 'map' %>
-<% end %>

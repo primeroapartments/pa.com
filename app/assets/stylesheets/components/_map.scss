@@ -7,6 +7,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+#map {
+  min-height: 450px !important;
+}
 // .mapboxgl-marker {
 //     width: 25px;
 //     height: 25px;
@@ -47,7 +50,7 @@
         cursor: pointer;
     }
 
-    #markerBirmingham {
+      #markerBirmingham {
         background-image: url('/images/birmingham.jpg');
         background-size: cover;
         width: 50px;
