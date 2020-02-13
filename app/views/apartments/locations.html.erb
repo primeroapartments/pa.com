@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-  <div class="col-md">
+  <div class="col-xs-12 col-md-6">
     <br>
           <div class="card-product">
             <%= image_tag "sheffield.jpg", alt: "Sheffield" %>
@@ -22,7 +22,7 @@
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
             <div class="card-product-infos">
               <h2>Basingstoke</h2>
-                <p>Click <a href="basingstoke">here</a> to see our <strong>apartments</strong> in Cardiff.</p>
+                <p>Click <a href="basingstoke">here</a> to see our <strong>apartments</strong> in Basingstoke.</p>
             </div>
           </div>
     <br>
@@ -33,10 +33,10 @@
                 <p><strong>Coming soon!</strong></p>
             </div>
         </div>
-
     <br>
   </div>
-  <div class="col-md">
+
+  <div class="col-xs-12 col-md-6">
     <br>
     <div id="map" style="width: 100%; height: 95%;"
       data-markers="<%= @markers.to_json %>"
