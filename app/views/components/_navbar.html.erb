@@ -15,20 +15,20 @@
         <li class="nav-item">
           <a href="/">Home</a>
         </li>
-        <li class="nav-item">
+        <!-- <div class="nav-item"> -->
           <div class="dropdown">
             <button type="button" class="btn btn-primero2 dropdown-toggle" data-toggle="dropdown">
               Book
             </button>
             <div class="dropdown-menu">
-              <a.dropdown class="dropdown-item" href="sheffield">Sheffield</a.dropdown>
-              <a.dropdown class="dropdown-item" href="cardiff">Cardiff</a.dropdown>
-              <a.dropdown class="dropdown-item" href="basingstoke">Basingstoke</a.dropdown>
+              <a class="dropdown-item" id="color" href="sheffield">Sheffield</a>
+              <a class="dropdown-item" id="color" href="cardiff">Cardiff</a>
+              <a class="dropdown-item" id="color" href="basingstoke">Basingstoke</a>
               <div class="dropdown-divider"></div>
-              <a.dropdown class="dropdown-item" href="">Birmingham - coming soon!</a.dropdown>
+              <a class="dropdown-item" id="color" href="">Birmingham - coming soon!</a>
             </div>
           </div>
-        </li>
+        <!-- </div> -->
         <li class="nav-item">
           <%= link_to "Locations", locations_path, class: "navbar-item-home navbar-link-home" %>
         </li>

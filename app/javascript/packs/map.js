@@ -38,7 +38,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 
     // create the popup
     var popupBasingstoke = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Stay in the Old Post Office or Verum House'
+        'Stay in the Old Post Office or Verum House, Basingstoke'
     );
 
     // create DOM element for the marker
@@ -55,7 +55,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 
     // create the popup
     var popupSheffield = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Stay in the Fitzgerald'
+        'Stay in the Fitzgerald, Sheffield'
     );
 
     // create DOM element for the marker
@@ -83,22 +83,4 @@ if (mapElement) { // only build a map if there's a div#map to inject into
         .setLngLat(birmingham)
         .setPopup(popupBirmingham) // sets a popup on this marker
         .addTo(map);
-
-
-  // const map = new mapboxgl.Map({
-  //   container: 'map', // container id
-  //   style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-  //   center: [-1.7603, 53.3781], // starting position [lng, lat]
-  //   zoom: 6, // starting zoom
-  // });
-
-  // const markers = JSON.parse(mapElement.dataset.markers);
-
-  // markers.forEach((marker) => {
-  //   new mapboxgl.Marker()
-  //     .setLngLat([ marker.lng, marker.lat ])
-  //     .addTo(map);
-  // });
-
-
 }
